@@ -1,7 +1,6 @@
 import argparse
 from pathlib import Path
-import yaml
-from core.data.rdd import NAMES
+from core.data.yolo import check_layout
 
 
 def main():
@@ -15,8 +14,7 @@ def main():
     p.add_argument("--out", default="runs/train")
     p.add_argument("--base", default="yolo11n.pt")
     a = p.parse_args()
-    if yaml.safe_load(a.data.read_text())["names"] != NAMES:
-        p.error("Expected the five-class RoadFusion data.yaml")
+    check_layout(a.data)
     from ultralytics import YOLO
 
     model = YOLO(a.base)

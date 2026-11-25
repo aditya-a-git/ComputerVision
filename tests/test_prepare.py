@@ -35,3 +35,27 @@ def test_http_denied(monkeypatch):
     monkeypatch.setattr("scripts.prepare_rdd.requests.get", request)
     with pytest.raises(ValueError, match="HTTP 403"):
         fetch("https://cdn.ul.run/image.jpg", [100])
+
+
+def test_split_leakage(tmp_path):
+    import yaml
+    from core.data.rdd import NAMES
+    from core.data.yolo import check_layout
+
+    for split in ("train", "val"):
+        image = tmp_path / "images" / split / "frame.png"
+        image.parent.mkdir(parents=True)
+        Image.new("RGB", (16, 16)).save(image)
+        labels = tmp_path / "labels" / split
+        labels.mkdir(parents=True)
+        (labels / "frame.txt").write_text("")
+    cfg = tmp_path / "data.yaml"
+    cfg.write_text(
+        yaml.safe_dump(
+            dict(
+                path=str(tmp_path), names=NAMES, train="images/train", val="images/val"
+            )
+        )
+    )
+    with pytest.raises(ValueError, match="across train and val"):
+        check_layout(cfg)

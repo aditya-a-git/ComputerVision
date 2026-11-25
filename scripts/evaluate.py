@@ -2,6 +2,7 @@ import argparse
 import json
 from pathlib import Path
 from core.detector import load
+from core.data.yolo import check_layout
 
 
 def main():
@@ -11,6 +12,7 @@ def main():
     p.add_argument("--device", default="cpu")
     p.add_argument("--imgsz", type=int, default=640)
     a = p.parse_args()
+    check_layout(a.data)
     model = load(a.weights)
     metrics = model.val(
         data=str(a.data.resolve()),

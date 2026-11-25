@@ -9,9 +9,9 @@
       "map": 0.0007122114694457294,
       "fp": 18,
       "fn": 37,
-      "p50_ms": 81.08965950003721,
-      "p95_ms": 225.54383034999995,
-      "processed_fps": 8.652847334462447
+      "p50_ms": 111.34596550004972,
+      "p95_ms": 298.171603399993,
+      "processed_fps": 6.2839130579926294
     },
     {
       "pipeline": "Dark RGB",
@@ -22,9 +22,9 @@
       "map": 0.00040666171803490974,
       "fp": 12,
       "fn": 37,
-      "p50_ms": 70.3012204999709,
-      "p95_ms": 447.5212211000439,
-      "processed_fps": 6.877196492922449
+      "p50_ms": 104.25860550003563,
+      "p95_ms": 332.2368691000463,
+      "processed_fps": 7.030531529111194
     },
     {
       "pipeline": "Proxy",
@@ -35,9 +35,9 @@
       "map": 0.0007826598620140084,
       "fp": 15,
       "fn": 37,
-      "p50_ms": 72.51159599996981,
-      "p95_ms": 252.2159599500014,
-      "processed_fps": 9.939359121015594
+      "p50_ms": 158.08770550000872,
+      "p95_ms": 327.63114644997125,
+      "processed_fps": 5.819634325546839
     },
     {
       "pipeline": "Full fusion",
@@ -48,9 +48,9 @@
       "map": 0.001004943039839198,
       "fp": 18,
       "fn": 37,
-      "p50_ms": 198.225965000006,
-      "p95_ms": 484.07898490002594,
-      "processed_fps": 4.296417446436328
+      "p50_ms": 437.8947564999862,
+      "p95_ms": 807.5605271000481,
+      "processed_fps": 2.050276165117464
     },
     {
       "pipeline": "Reduced fusion",
@@ -61,9 +61,9 @@
       "map": 0.0008268160556785373,
       "fp": 0,
       "fn": 37,
-      "p50_ms": 78.4055264999779,
-      "p95_ms": 347.0687144999827,
-      "processed_fps": 8.612321550477553
+      "p50_ms": 114.2688995000185,
+      "p95_ms": 410.71908345005556,
+      "processed_fps": 5.581182169743707
     },
     {
       "pipeline": "Single best",
@@ -74,9 +74,9 @@
       "map": 0.0008530900998045564,
       "fp": 1,
       "fn": 37,
-      "p50_ms": 32.17263199996978,
-      "p95_ms": 285.624993300064,
-      "processed_fps": 15.499149659495243
+      "p50_ms": 32.13232349992268,
+      "p95_ms": 290.03355560008674,
+      "processed_fps": 15.206844121015008
     },
     {
       "pipeline": "Dark fusion",
@@ -87,9 +87,9 @@
       "map": 0.00040959400301620555,
       "fp": 10,
       "fn": 37,
-      "p50_ms": 247.57353950002425,
-      "p95_ms": 660.4780822999826,
-      "processed_fps": 3.3006709766107094
+      "p50_ms": 197.19871050006077,
+      "p95_ms": 552.601017150141,
+      "processed_fps": 3.927884152360255
     }
   ],
   "classes": [
@@ -520,7 +520,7 @@
       "file": "train__China_MotorBike_001136__4d83ee0693.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.1317963989999953,
+      "seconds": 0.22541080700000293,
       "branches": [
         "rgb"
       ]
@@ -530,7 +530,7 @@
       "file": "train__United_States_002292__ecbc113b06.jpg",
       "instances": 4,
       "detections_at_025": 0,
-      "seconds": 0.17328139299991108,
+      "seconds": 0.24026330499998494,
       "branches": [
         "rgb"
       ]
@@ -540,7 +540,7 @@
       "file": "train__Czech_001468__3445bd07d7.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.17372556299994812,
+      "seconds": 0.18212632999996003,
       "branches": [
         "rgb"
       ]
@@ -550,7 +550,7 @@
       "file": "train__Japan_004482__8c126e018c.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.2059456260000161,
+      "seconds": 0.14914975299996058,
       "branches": [
         "rgb"
       ]
@@ -560,7 +560,7 @@
       "file": "train__India_003907__7ec64e3bb8.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.15431865000005018,
+      "seconds": 0.16586203500003194,
       "branches": [
         "rgb"
       ]
@@ -570,7 +570,7 @@
       "file": "train__Norway_003924__52050dff57.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.27958600299996306,
+      "seconds": 0.44289004500001283,
       "branches": [
         "rgb"
       ]
@@ -580,7 +580,7 @@
       "file": "train__Japan_010410__2e64558c4a.jpg",
       "instances": 1,
       "detections_at_025": 3,
-      "seconds": 0.1439066839999441,
+      "seconds": 0.230422730999976,
       "branches": [
         "rgb"
       ]
@@ -590,7 +590,7 @@
       "file": "train__China_Drone_001754__8914ba45ff.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.08348530000000665,
+      "seconds": 0.08748016499998812,
       "branches": [
         "rgb"
       ]
@@ -600,7 +600,7 @@
       "file": "train__Japan_006787__f3f3158d41.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.07750394300001062,
+      "seconds": 0.10514450300001954,
       "branches": [
         "rgb"
       ]
@@ -610,7 +610,7 @@
       "file": "train__Norway_002872__47c49b8fe7.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.180979797999953,
+      "seconds": 0.2673307269999441,
       "branches": [
         "rgb"
       ]
@@ -620,7 +620,7 @@
       "file": "train__India_004905__719be6edae.jpg",
       "instances": 0,
       "detections_at_025": 1,
-      "seconds": 0.07483469300007073,
+      "seconds": 0.10777323800004979,
       "branches": [
         "rgb"
       ]
@@ -630,7 +630,7 @@
       "file": "train__Japan_006331__36ab23f471.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.05714308400001755,
+      "seconds": 0.10316833299998507,
       "branches": [
         "rgb"
       ]
@@ -640,7 +640,7 @@
       "file": "train__China_MotorBike_001387__8a904eecb9.jpg",
       "instances": 4,
       "detections_at_025": 0,
-      "seconds": 0.0730888440000399,
+      "seconds": 0.10416650299998764,
       "branches": [
         "rgb"
       ]
@@ -650,7 +650,7 @@
       "file": "train__China_Drone_001816__6a90bce954.jpg",
       "instances": 3,
       "detections_at_025": 0,
-      "seconds": 0.08085143800008154,
+      "seconds": 0.1087282140000525,
       "branches": [
         "rgb"
       ]
@@ -660,7 +660,7 @@
       "file": "train__India_003861__2b565cf239.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.06983739500003594,
+      "seconds": 0.1044906729999866,
       "branches": [
         "rgb"
       ]
@@ -670,7 +670,7 @@
       "file": "train__China_MotorBike_001260__fd8a94f7d5.jpg",
       "instances": 4,
       "detections_at_025": 7,
-      "seconds": 0.0634368019999556,
+      "seconds": 0.09518659200000457,
       "branches": [
         "rgb"
       ]
@@ -680,7 +680,7 @@
       "file": "train__India_004299__d954d5072c.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.08478361300001325,
+      "seconds": 0.11396371700004693,
       "branches": [
         "rgb"
       ]
@@ -690,7 +690,7 @@
       "file": "train__Japan_000846__9bc09dc9d7.jpg",
       "instances": 2,
       "detections_at_025": 7,
-      "seconds": 0.07740243699993243,
+      "seconds": 0.13850262800008295,
       "branches": [
         "rgb"
       ]
@@ -700,7 +700,7 @@
       "file": "train__Japan_003139__12f07cc28a.jpg",
       "instances": 8,
       "detections_at_025": 0,
-      "seconds": 0.06337058499991599,
+      "seconds": 0.13579894200006493,
       "branches": [
         "rgb"
       ]
@@ -710,7 +710,7 @@
       "file": "train__Norway_000174__9c35690f64.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.22900233699999717,
+      "seconds": 0.3036141110000017,
       "branches": [
         "rgb"
       ]
@@ -720,7 +720,7 @@
       "file": "train__India_005798__0e8c563647.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.0700363760000755,
+      "seconds": 0.09886842100002013,
       "branches": [
         "rgb"
       ]
@@ -730,7 +730,7 @@
       "file": "train__Japan_004432__47440958c4.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.08132788099999289,
+      "seconds": 0.10054763400000866,
       "branches": [
         "rgb"
       ]
@@ -740,7 +740,7 @@
       "file": "train__India_000263__e9837592fc.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.07546509799999512,
+      "seconds": 0.09970121499998186,
       "branches": [
         "rgb"
       ]
@@ -750,7 +750,7 @@
       "file": "train__Japan_002993__8297fb4899.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.06854352400000607,
+      "seconds": 0.10868564400004743,
       "branches": [
         "rgb"
       ]
@@ -760,7 +760,7 @@
       "file": "train__China_MotorBike_001136__4d83ee0693.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.06645103799996832,
+      "seconds": 0.09537973699991653,
       "branches": [
         "rgb"
       ]
@@ -770,7 +770,7 @@
       "file": "train__United_States_002292__ecbc113b06.jpg",
       "instances": 4,
       "detections_at_025": 0,
-      "seconds": 0.07006867300003705,
+      "seconds": 0.10360305100005007,
       "branches": [
         "rgb"
       ]
@@ -780,7 +780,7 @@
       "file": "train__Czech_001468__3445bd07d7.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.07710391500006608,
+      "seconds": 0.10664960599990536,
       "branches": [
         "rgb"
       ]
@@ -790,7 +790,7 @@
       "file": "train__Japan_004482__8c126e018c.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.06858027700002367,
+      "seconds": 0.10827356699996926,
       "branches": [
         "rgb"
       ]
@@ -800,7 +800,7 @@
       "file": "train__India_003907__7ec64e3bb8.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.06621287799998754,
+      "seconds": 0.09714591399995243,
       "branches": [
         "rgb"
       ]
@@ -810,7 +810,7 @@
       "file": "train__Norway_003924__52050dff57.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 1.10740616399994,
+      "seconds": 0.33440155000005234,
       "branches": [
         "rgb"
       ]
@@ -820,7 +820,7 @@
       "file": "train__Japan_010410__2e64558c4a.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.07852734799996597,
+      "seconds": 0.1127725430000055,
       "branches": [
         "rgb"
       ]
@@ -830,7 +830,7 @@
       "file": "train__China_Drone_001754__8914ba45ff.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.07277824300001612,
+      "seconds": 0.08580616400001873,
       "branches": [
         "rgb"
       ]
@@ -840,7 +840,7 @@
       "file": "train__Japan_006787__f3f3158d41.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.07029558699991867,
+      "seconds": 0.13313190300004862,
       "branches": [
         "rgb"
       ]
@@ -850,7 +850,7 @@
       "file": "train__Norway_002872__47c49b8fe7.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.44932529000004706,
+      "seconds": 0.3199703440000121,
       "branches": [
         "rgb"
       ]
@@ -860,7 +860,7 @@
       "file": "train__India_004905__719be6edae.jpg",
       "instances": 0,
       "detections_at_025": 1,
-      "seconds": 0.09718304500006525,
+      "seconds": 0.10328956499995456,
       "branches": [
         "rgb"
       ]
@@ -870,7 +870,7 @@
       "file": "train__Japan_006331__36ab23f471.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.06695369400006257,
+      "seconds": 0.0991589609999437,
       "branches": [
         "rgb"
       ]
@@ -880,7 +880,7 @@
       "file": "train__China_MotorBike_001387__8a904eecb9.jpg",
       "instances": 4,
       "detections_at_025": 0,
-      "seconds": 0.06652625699996406,
+      "seconds": 0.09723793200009823,
       "branches": [
         "rgb"
       ]
@@ -890,7 +890,7 @@
       "file": "train__China_Drone_001816__6a90bce954.jpg",
       "instances": 3,
       "detections_at_025": 0,
-      "seconds": 0.07030685400002312,
+      "seconds": 0.10539123800003836,
       "branches": [
         "rgb"
       ]
@@ -900,7 +900,7 @@
       "file": "train__India_003861__2b565cf239.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.06503007900005287,
+      "seconds": 0.10301859200001218,
       "branches": [
         "rgb"
       ]
@@ -910,7 +910,7 @@
       "file": "train__China_MotorBike_001260__fd8a94f7d5.jpg",
       "instances": 4,
       "detections_at_025": 4,
-      "seconds": 0.05883208400007334,
+      "seconds": 0.09353962299996965,
       "branches": [
         "rgb"
       ]
@@ -920,7 +920,7 @@
       "file": "train__India_004299__d954d5072c.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.06815595900002336,
+      "seconds": 0.11753899099994669,
       "branches": [
         "rgb"
       ]
@@ -930,7 +930,7 @@
       "file": "train__Japan_000846__9bc09dc9d7.jpg",
       "instances": 2,
       "detections_at_025": 7,
-      "seconds": 0.07921927800009598,
+      "seconds": 0.12586926200003745,
       "branches": [
         "rgb"
       ]
@@ -940,7 +940,7 @@
       "file": "train__Japan_003139__12f07cc28a.jpg",
       "instances": 8,
       "detections_at_025": 0,
-      "seconds": 0.07007040600001346,
+      "seconds": 0.10364222900000186,
       "branches": [
         "rgb"
       ]
@@ -950,7 +950,7 @@
       "file": "train__Norway_000174__9c35690f64.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.4372981640000262,
+      "seconds": 0.46775894099994275,
       "branches": [
         "rgb"
       ]
@@ -960,7 +960,7 @@
       "file": "train__India_005798__0e8c563647.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.07197051699995427,
+      "seconds": 0.1048749820000694,
       "branches": [
         "rgb"
       ]
@@ -970,7 +970,7 @@
       "file": "train__Japan_004432__47440958c4.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.06579744600003323,
+      "seconds": 0.19559612600005494,
       "branches": [
         "rgb"
       ]
@@ -980,7 +980,7 @@
       "file": "train__India_000263__e9837592fc.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.07288561600000776,
+      "seconds": 0.10342289599998367,
       "branches": [
         "rgb"
       ]
@@ -990,7 +990,7 @@
       "file": "train__Japan_002993__8297fb4899.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.07281532499996501,
+      "seconds": 0.0962084349999941,
       "branches": [
         "rgb"
       ]
@@ -1000,7 +1000,7 @@
       "file": "train__China_MotorBike_001136__4d83ee0693.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.07084632900000543,
+      "seconds": 0.08879865899996275,
       "branches": [
         "proxy"
       ]
@@ -1010,7 +1010,7 @@
       "file": "train__United_States_002292__ecbc113b06.jpg",
       "instances": 4,
       "detections_at_025": 1,
-      "seconds": 0.07687024900008055,
+      "seconds": 0.11513940100007858,
       "branches": [
         "proxy"
       ]
@@ -1020,7 +1020,7 @@
       "file": "train__Czech_001468__3445bd07d7.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.07028073599997242,
+      "seconds": 0.09972820999996657,
       "branches": [
         "proxy"
       ]
@@ -1030,7 +1030,7 @@
       "file": "train__Japan_004482__8c126e018c.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.11306959800003824,
+      "seconds": 0.11039878400004,
       "branches": [
         "proxy"
       ]
@@ -1040,7 +1040,7 @@
       "file": "train__India_003907__7ec64e3bb8.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.08867411000005632,
+      "seconds": 0.10734109800000624,
       "branches": [
         "proxy"
       ]
@@ -1050,7 +1050,7 @@
       "file": "train__Norway_003924__52050dff57.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.33415314299998045,
+      "seconds": 0.30634177699994325,
       "branches": [
         "proxy"
       ]
@@ -1060,7 +1060,7 @@
       "file": "train__Japan_010410__2e64558c4a.jpg",
       "instances": 1,
       "detections_at_025": 3,
-      "seconds": 0.07063264299995353,
+      "seconds": 0.1114577170000075,
       "branches": [
         "proxy"
       ]
@@ -1070,7 +1070,7 @@
       "file": "train__China_Drone_001754__8914ba45ff.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.05969034999998257,
+      "seconds": 0.10246865099998104,
       "branches": [
         "proxy"
       ]
@@ -1080,7 +1080,7 @@
       "file": "train__Japan_006787__f3f3158d41.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.07042264200003956,
+      "seconds": 0.10378575100003218,
       "branches": [
         "proxy"
       ]
@@ -1090,7 +1090,7 @@
       "file": "train__Norway_002872__47c49b8fe7.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.25317668100001356,
+      "seconds": 0.33138809399997626,
       "branches": [
         "proxy"
       ]
@@ -1100,7 +1100,7 @@
       "file": "train__India_004905__719be6edae.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.08840548700004547,
+      "seconds": 0.1550340960000085,
       "branches": [
         "proxy"
       ]
@@ -1110,7 +1110,7 @@
       "file": "train__Japan_006331__36ab23f471.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.06219733599994015,
+      "seconds": 0.197662164999997,
       "branches": [
         "proxy"
       ]
@@ -1120,7 +1120,7 @@
       "file": "train__China_MotorBike_001387__8a904eecb9.jpg",
       "instances": 4,
       "detections_at_025": 0,
-      "seconds": 0.06980345300007684,
+      "seconds": 0.1344624539999586,
       "branches": [
         "proxy"
       ]
@@ -1130,7 +1130,7 @@
       "file": "train__China_Drone_001816__6a90bce954.jpg",
       "instances": 3,
       "detections_at_025": 0,
-      "seconds": 0.06388874499998565,
+      "seconds": 0.16114131500000894,
       "branches": [
         "proxy"
       ]
@@ -1140,7 +1140,7 @@
       "file": "train__India_003861__2b565cf239.jpg",
       "instances": 0,
       "detections_at_025": 1,
-      "seconds": 0.07297957200000837,
+      "seconds": 0.1882344309999553,
       "branches": [
         "proxy"
       ]
@@ -1150,7 +1150,7 @@
       "file": "train__China_MotorBike_001260__fd8a94f7d5.jpg",
       "instances": 4,
       "detections_at_025": 7,
-      "seconds": 0.06366474400010702,
+      "seconds": 0.19068825800002287,
       "branches": [
         "proxy"
       ]
@@ -1160,7 +1160,7 @@
       "file": "train__India_004299__d954d5072c.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.07028900599993904,
+      "seconds": 0.21303619000002527,
       "branches": [
         "proxy"
       ]
@@ -1170,7 +1170,7 @@
       "file": "train__Japan_000846__9bc09dc9d7.jpg",
       "instances": 2,
       "detections_at_025": 3,
-      "seconds": 0.07204361999993125,
+      "seconds": 0.21203735500000676,
       "branches": [
         "proxy"
       ]
@@ -1180,7 +1180,7 @@
       "file": "train__Japan_003139__12f07cc28a.jpg",
       "instances": 8,
       "detections_at_025": 0,
-      "seconds": 0.06572328499999003,
+      "seconds": 0.12873043199999756,
       "branches": [
         "proxy"
       ]
@@ -1190,7 +1190,7 @@
       "file": "train__Norway_000174__9c35690f64.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.24677187399993272,
+      "seconds": 0.3976110650000919,
       "branches": [
         "proxy"
       ]
@@ -1200,7 +1200,7 @@
       "file": "train__India_005798__0e8c563647.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.08969687599994813,
+      "seconds": 0.17500779199997396,
       "branches": [
         "proxy"
       ]
@@ -1210,7 +1210,7 @@
       "file": "train__Japan_004432__47440958c4.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.0739866039999697,
+      "seconds": 0.13090334699995765,
       "branches": [
         "proxy"
       ]
@@ -1220,7 +1220,7 @@
       "file": "train__India_000263__e9837592fc.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.09420004700007212,
+      "seconds": 0.19721802599997318,
       "branches": [
         "proxy"
       ]
@@ -1230,7 +1230,7 @@
       "file": "train__Japan_002993__8297fb4899.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.0731754749999709,
+      "seconds": 0.1653553840000086,
       "branches": [
         "proxy"
       ]
@@ -1240,7 +1240,7 @@
       "file": "train__China_MotorBike_001136__4d83ee0693.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.16089148000003206,
+      "seconds": 0.3178897740000366,
       "branches": [
         "rgb",
         "proxy"
@@ -1251,7 +1251,7 @@
       "file": "train__United_States_002292__ecbc113b06.jpg",
       "instances": 4,
       "detections_at_025": 0,
-      "seconds": 0.19267620200002966,
+      "seconds": 0.36633674600000177,
       "branches": [
         "rgb",
         "proxy"
@@ -1262,7 +1262,7 @@
       "file": "train__Czech_001468__3445bd07d7.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.19896992300004968,
+      "seconds": 0.36969128399994133,
       "branches": [
         "rgb",
         "proxy"
@@ -1273,7 +1273,7 @@
       "file": "train__Japan_004482__8c126e018c.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.1864743600000338,
+      "seconds": 0.43834723800000575,
       "branches": [
         "rgb",
         "proxy"
@@ -1284,7 +1284,7 @@
       "file": "train__India_003907__7ec64e3bb8.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.19704147600009492,
+      "seconds": 0.5870575030000964,
       "branches": [
         "rgb",
         "proxy"
@@ -1295,7 +1295,7 @@
       "file": "train__Norway_003924__52050dff57.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.4866669880000245,
+      "seconds": 0.6794532139999774,
       "branches": [
         "rgb",
         "proxy"
@@ -1306,7 +1306,7 @@
       "file": "train__Japan_010410__2e64558c4a.jpg",
       "instances": 1,
       "detections_at_025": 2,
-      "seconds": 0.21232011899996905,
+      "seconds": 0.3619988000000376,
       "branches": [
         "rgb",
         "proxy"
@@ -1317,7 +1317,7 @@
       "file": "train__China_Drone_001754__8914ba45ff.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.18325930000003154,
+      "seconds": 0.4418904090000524,
       "branches": [
         "rgb",
         "proxy"
@@ -1328,7 +1328,7 @@
       "file": "train__Japan_006787__f3f3158d41.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.1942846690000124,
+      "seconds": 0.38370178399998167,
       "branches": [
         "rgb",
         "proxy"
@@ -1339,7 +1339,7 @@
       "file": "train__Norway_002872__47c49b8fe7.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.4694136340000341,
+      "seconds": 0.8301677000000609,
       "branches": [
         "rgb",
         "proxy"
@@ -1350,7 +1350,7 @@
       "file": "train__India_004905__719be6edae.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.20072036300007312,
+      "seconds": 0.3713330319999386,
       "branches": [
         "rgb",
         "proxy"
@@ -1361,7 +1361,7 @@
       "file": "train__Japan_006331__36ab23f471.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.1844116940000049,
+      "seconds": 0.4498212500000136,
       "branches": [
         "rgb",
         "proxy"
@@ -1372,7 +1372,7 @@
       "file": "train__China_MotorBike_001387__8a904eecb9.jpg",
       "instances": 4,
       "detections_at_025": 0,
-      "seconds": 0.18729646799999955,
+      "seconds": 0.43599142899995513,
       "branches": [
         "rgb",
         "proxy"
@@ -1383,7 +1383,7 @@
       "file": "train__China_Drone_001816__6a90bce954.jpg",
       "instances": 3,
       "detections_at_025": 0,
-      "seconds": 0.2010327220000363,
+      "seconds": 0.40548371600004884,
       "branches": [
         "rgb",
         "proxy"
@@ -1394,7 +1394,7 @@
       "file": "train__India_003861__2b565cf239.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.20623214600004758,
+      "seconds": 0.48720665799999097,
       "branches": [
         "rgb",
         "proxy"
@@ -1405,7 +1405,7 @@
       "file": "train__China_MotorBike_001260__fd8a94f7d5.jpg",
       "instances": 4,
       "detections_at_025": 9,
-      "seconds": 0.1839111790000061,
+      "seconds": 0.510773841999935,
       "branches": [
         "rgb",
         "proxy"
@@ -1416,7 +1416,7 @@
       "file": "train__India_004299__d954d5072c.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.2097976480000625,
+      "seconds": 0.5631473249999317,
       "branches": [
         "rgb",
         "proxy"
@@ -1427,7 +1427,7 @@
       "file": "train__Japan_000846__9bc09dc9d7.jpg",
       "instances": 2,
       "detections_at_025": 7,
-      "seconds": 0.21212533900006747,
+      "seconds": 0.38304309900001954,
       "branches": [
         "rgb",
         "proxy"
@@ -1438,7 +1438,7 @@
       "file": "train__Japan_003139__12f07cc28a.jpg",
       "instances": 8,
       "detections_at_025": 0,
-      "seconds": 0.18499742500000593,
+      "seconds": 0.3918632599999228,
       "branches": [
         "rgb",
         "proxy"
@@ -1449,7 +1449,7 @@
       "file": "train__Norway_000174__9c35690f64.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.5189560799999526,
+      "seconds": 0.9568236520000255,
       "branches": [
         "rgb",
         "proxy"
@@ -1460,7 +1460,7 @@
       "file": "train__India_005798__0e8c563647.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.22745131700003185,
+      "seconds": 0.6101558719999503,
       "branches": [
         "rgb",
         "proxy"
@@ -1471,7 +1471,7 @@
       "file": "train__Japan_004432__47440958c4.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.18671679999999924,
+      "seconds": 0.4221237369999926,
       "branches": [
         "rgb",
         "proxy"
@@ -1482,7 +1482,7 @@
       "file": "train__India_000263__e9837592fc.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.19748200699996232,
+      "seconds": 0.4374422749999667,
       "branches": [
         "rgb",
         "proxy"
@@ -1493,7 +1493,7 @@
       "file": "train__Japan_002993__8297fb4899.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.20292003800000202,
+      "seconds": 0.5039965390000134,
       "branches": [
         "rgb",
         "proxy"
@@ -1504,7 +1504,7 @@
       "file": "train__China_MotorBike_001136__4d83ee0693.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.0774860079999371,
+      "seconds": 0.19542876200000592,
       "branches": [
         "rgb",
         "proxy"
@@ -1515,7 +1515,7 @@
       "file": "train__United_States_002292__ecbc113b06.jpg",
       "instances": 4,
       "detections_at_025": 0,
-      "seconds": 0.07699719000004279,
+      "seconds": 0.4170804180000687,
       "branches": [
         "rgb",
         "proxy"
@@ -1526,7 +1526,7 @@
       "file": "train__Czech_001468__3445bd07d7.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.13582793600005516,
+      "seconds": 0.1528613599999744,
       "branches": [
         "rgb",
         "proxy"
@@ -1537,7 +1537,7 @@
       "file": "train__Japan_004482__8c126e018c.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.15936505399997714,
+      "seconds": 0.28884287399989717,
       "branches": [
         "rgb",
         "proxy"
@@ -1548,7 +1548,7 @@
       "file": "train__India_003907__7ec64e3bb8.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.08931443699998454,
+      "seconds": 0.19825541399995927,
       "branches": [
         "rgb",
         "proxy"
@@ -1559,7 +1559,7 @@
       "file": "train__Norway_003924__52050dff57.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.3835317840000698,
+      "seconds": 0.5887745149999546,
       "branches": [
         "rgb",
         "proxy"
@@ -1570,7 +1570,7 @@
       "file": "train__Japan_010410__2e64558c4a.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.07351273400001901,
+      "seconds": 0.12111544300000787,
       "branches": [
         "rgb",
         "proxy"
@@ -1581,7 +1581,7 @@
       "file": "train__China_Drone_001754__8914ba45ff.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.06730233799999041,
+      "seconds": 0.09736672099995758,
       "branches": [
         "rgb",
         "proxy"
@@ -1592,7 +1592,7 @@
       "file": "train__Japan_006787__f3f3158d41.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.07242732700001397,
+      "seconds": 0.13505893600006402,
       "branches": [
         "rgb",
         "proxy"
@@ -1603,7 +1603,7 @@
       "file": "train__Norway_002872__47c49b8fe7.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.28998428699992473,
+      "seconds": 0.374671520999982,
       "branches": [
         "rgb",
         "proxy"
@@ -1614,7 +1614,7 @@
       "file": "train__India_004905__719be6edae.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.07288547699999981,
+      "seconds": 0.11353177699993466,
       "branches": [
         "rgb",
         "proxy"
@@ -1625,7 +1625,7 @@
       "file": "train__Japan_006331__36ab23f471.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.05835556399995312,
+      "seconds": 0.1085303820000263,
       "branches": [
         "rgb",
         "proxy"
@@ -1636,7 +1636,7 @@
       "file": "train__China_MotorBike_001387__8a904eecb9.jpg",
       "instances": 4,
       "detections_at_025": 0,
-      "seconds": 0.08161249199997656,
+      "seconds": 0.1139011230000051,
       "branches": [
         "rgb",
         "proxy"
@@ -1647,7 +1647,7 @@
       "file": "train__China_Drone_001816__6a90bce954.jpg",
       "instances": 3,
       "detections_at_025": 0,
-      "seconds": 0.08244365899997774,
+      "seconds": 0.10477879199993367,
       "branches": [
         "rgb",
         "proxy"
@@ -1658,7 +1658,7 @@
       "file": "train__India_003861__2b565cf239.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.08112525499996082,
+      "seconds": 0.10685112800001662,
       "branches": [
         "rgb",
         "proxy"
@@ -1669,7 +1669,7 @@
       "file": "train__China_MotorBike_001260__fd8a94f7d5.jpg",
       "instances": 4,
       "detections_at_025": 0,
-      "seconds": 0.07932504500001869,
+      "seconds": 0.09583550000002106,
       "branches": [
         "rgb",
         "proxy"
@@ -1680,7 +1680,7 @@
       "file": "train__India_004299__d954d5072c.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.08541592699998546,
+      "seconds": 0.107375616000013,
       "branches": [
         "rgb",
         "proxy"
@@ -1691,7 +1691,7 @@
       "file": "train__Japan_000846__9bc09dc9d7.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.0910026960000323,
+      "seconds": 0.11463667600003191,
       "branches": [
         "rgb",
         "proxy"
@@ -1702,7 +1702,7 @@
       "file": "train__Japan_003139__12f07cc28a.jpg",
       "instances": 8,
       "detections_at_025": 0,
-      "seconds": 0.0741666209999039,
+      "seconds": 0.13648908699997264,
       "branches": [
         "rgb",
         "proxy"
@@ -1713,7 +1713,7 @@
       "file": "train__Norway_000174__9c35690f64.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.35714243699999315,
+      "seconds": 0.33712720400001217,
       "branches": [
         "rgb",
         "proxy"
@@ -1724,7 +1724,7 @@
       "file": "train__India_005798__0e8c563647.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.07172799399995711,
+      "seconds": 0.08981573100004425,
       "branches": [
         "rgb",
         "proxy"
@@ -1735,7 +1735,7 @@
       "file": "train__Japan_004432__47440958c4.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.0731440609999936,
+      "seconds": 0.09157096000001275,
       "branches": [
         "rgb",
         "proxy"
@@ -1746,7 +1746,7 @@
       "file": "train__India_000263__e9837592fc.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.07577314200000274,
+      "seconds": 0.10297471499995936,
       "branches": [
         "rgb",
         "proxy"
@@ -1757,7 +1757,7 @@
       "file": "train__Japan_002993__8297fb4899.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.076835590000087,
+      "seconds": 0.1072895879999578,
       "branches": [
         "rgb",
         "proxy"
@@ -1768,7 +1768,7 @@
       "file": "train__China_MotorBike_001136__4d83ee0693.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.032178439999938746,
+      "seconds": 0.06051864299990939,
       "branches": [
         "proxy"
       ]
@@ -1778,7 +1778,7 @@
       "file": "train__United_States_002292__ecbc113b06.jpg",
       "instances": 4,
       "detections_at_025": 0,
-      "seconds": 0.032303035999916574,
+      "seconds": 0.04046311699994476,
       "branches": [
         "proxy"
       ]
@@ -1788,7 +1788,7 @@
       "file": "train__Czech_001468__3445bd07d7.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.032618806000073164,
+      "seconds": 0.03048647399998572,
       "branches": [
         "proxy"
       ]
@@ -1798,7 +1798,7 @@
       "file": "train__Japan_004482__8c126e018c.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.030539860000089902,
+      "seconds": 0.031226070999991862,
       "branches": [
         "rgb"
       ]
@@ -1808,7 +1808,7 @@
       "file": "train__India_003907__7ec64e3bb8.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.032166824000000815,
+      "seconds": 0.05310139799996705,
       "branches": [
         "proxy"
       ]
@@ -1818,7 +1818,7 @@
       "file": "train__Norway_003924__52050dff57.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.2578820830000268,
+      "seconds": 0.2965921340000932,
       "branches": [
         "proxy"
       ]
@@ -1828,7 +1828,7 @@
       "file": "train__Japan_010410__2e64558c4a.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.03533298700006071,
+      "seconds": 0.03376325100020949,
       "branches": [
         "proxy"
       ]
@@ -1838,7 +1838,7 @@
       "file": "train__China_Drone_001754__8914ba45ff.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.025852949000068293,
+      "seconds": 0.026110094999921785,
       "branches": [
         "proxy"
       ]
@@ -1848,7 +1848,7 @@
       "file": "train__Japan_006787__f3f3158d41.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.03167460600002414,
+      "seconds": 0.02941432900001928,
       "branches": [
         "proxy"
       ]
@@ -1858,7 +1858,7 @@
       "file": "train__Norway_002872__47c49b8fe7.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.2905208010000706,
+      "seconds": 0.25286827800005085,
       "branches": [
         "proxy"
       ]
@@ -1868,7 +1868,7 @@
       "file": "train__India_004905__719be6edae.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.0390182090000053,
+      "seconds": 0.03533406499991543,
       "branches": [
         "rgb"
       ]
@@ -1878,7 +1878,7 @@
       "file": "train__Japan_006331__36ab23f471.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.03144129999998313,
+      "seconds": 0.03159260799998265,
       "branches": [
         "proxy"
       ]
@@ -1888,7 +1888,7 @@
       "file": "train__China_MotorBike_001387__8a904eecb9.jpg",
       "instances": 4,
       "detections_at_025": 1,
-      "seconds": 0.02933046100008596,
+      "seconds": 0.030470272000002296,
       "branches": [
         "proxy"
       ]
@@ -1898,7 +1898,7 @@
       "file": "train__China_Drone_001816__6a90bce954.jpg",
       "instances": 3,
       "detections_at_025": 0,
-      "seconds": 0.026206787999967673,
+      "seconds": 0.029853201000150875,
       "branches": [
         "proxy"
       ]
@@ -1908,7 +1908,7 @@
       "file": "train__India_003861__2b565cf239.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.0319019930000195,
+      "seconds": 0.030936739000026137,
       "branches": [
         "proxy"
       ]
@@ -1918,7 +1918,7 @@
       "file": "train__China_MotorBike_001260__fd8a94f7d5.jpg",
       "instances": 4,
       "detections_at_025": 0,
-      "seconds": 0.029639627999927143,
+      "seconds": 0.03216084499990757,
       "branches": [
         "proxy"
       ]
@@ -1928,7 +1928,7 @@
       "file": "train__India_004299__d954d5072c.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.032842956999957096,
+      "seconds": 0.030023280000023078,
       "branches": [
         "proxy"
       ]
@@ -1938,7 +1938,7 @@
       "file": "train__Japan_000846__9bc09dc9d7.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.031384149000018624,
+      "seconds": 0.028739643999870168,
       "branches": [
         "proxy"
       ]
@@ -1948,7 +1948,7 @@
       "file": "train__Japan_003139__12f07cc28a.jpg",
       "instances": 8,
       "detections_at_025": 0,
-      "seconds": 0.03460224699995251,
+      "seconds": 0.031730995000089024,
       "branches": [
         "proxy"
       ]
@@ -1958,7 +1958,7 @@
       "file": "train__Norway_000174__9c35690f64.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.29519358300001386,
+      "seconds": 0.29712019200019313,
       "branches": [
         "proxy"
       ]
@@ -1968,7 +1968,7 @@
       "file": "train__India_005798__0e8c563647.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.06054891400003726,
+      "seconds": 0.04157919499994023,
       "branches": [
         "proxy"
       ]
@@ -1978,7 +1978,7 @@
       "file": "train__Japan_004432__47440958c4.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.030150278999940383,
+      "seconds": 0.03360092999992048,
       "branches": [
         "proxy"
       ]
@@ -1988,7 +1988,7 @@
       "file": "train__India_000263__e9837592fc.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.04421839600001931,
+      "seconds": 0.03844717600009062,
       "branches": [
         "rgb"
       ]
@@ -1998,7 +1998,7 @@
       "file": "train__Japan_002993__8297fb4899.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.03092275099993458,
+      "seconds": 0.03210380199993779,
       "branches": [
         "proxy"
       ]
@@ -2008,7 +2008,7 @@
       "file": "train__China_MotorBike_001136__4d83ee0693.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.18056855199995425,
+      "seconds": 0.2213309769999796,
       "branches": [
         "rgb",
         "proxy"
@@ -2019,7 +2019,7 @@
       "file": "train__United_States_002292__ecbc113b06.jpg",
       "instances": 4,
       "detections_at_025": 0,
-      "seconds": 0.18242371199994523,
+      "seconds": 0.22229023599993525,
       "branches": [
         "rgb",
         "proxy"
@@ -2030,7 +2030,7 @@
       "file": "train__Czech_001468__3445bd07d7.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.2627583800000366,
+      "seconds": 0.25884710200011796,
       "branches": [
         "rgb",
         "proxy"
@@ -2041,7 +2041,7 @@
       "file": "train__Japan_004482__8c126e018c.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.2464971989999185,
+      "seconds": 0.18904244700001982,
       "branches": [
         "rgb",
         "proxy"
@@ -2052,7 +2052,7 @@
       "file": "train__India_003907__7ec64e3bb8.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.4948966989999235,
+      "seconds": 0.4254282280001007,
       "branches": [
         "rgb",
         "proxy"
@@ -2063,7 +2063,7 @@
       "file": "train__Norway_003924__52050dff57.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.6770526469999822,
+      "seconds": 0.5157797660001506,
       "branches": [
         "rgb",
         "proxy"
@@ -2074,7 +2074,7 @@
       "file": "train__Japan_010410__2e64558c4a.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.24701516599998286,
+      "seconds": 0.23825224000006529,
       "branches": [
         "rgb",
         "proxy"
@@ -2085,7 +2085,7 @@
       "file": "train__China_Drone_001754__8914ba45ff.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.2480806120000807,
+      "seconds": 0.179037512999912,
       "branches": [
         "rgb",
         "proxy"
@@ -2096,7 +2096,7 @@
       "file": "train__Japan_006787__f3f3158d41.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.24689166600001045,
+      "seconds": 0.19042747799994686,
       "branches": [
         "rgb",
         "proxy"
@@ -2107,7 +2107,7 @@
       "file": "train__Norway_002872__47c49b8fe7.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.5665555489999861,
+      "seconds": 0.5590988850001395,
       "branches": [
         "rgb",
         "proxy"
@@ -2118,7 +2118,7 @@
       "file": "train__India_004905__719be6edae.jpg",
       "instances": 0,
       "detections_at_025": 1,
-      "seconds": 0.24706646699996782,
+      "seconds": 0.1899773099999038,
       "branches": [
         "rgb",
         "proxy"
@@ -2129,7 +2129,7 @@
       "file": "train__Japan_006331__36ab23f471.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.2613586549999809,
+      "seconds": 0.20794025100008184,
       "branches": [
         "rgb",
         "proxy"
@@ -2140,7 +2140,7 @@
       "file": "train__China_MotorBike_001387__8a904eecb9.jpg",
       "instances": 4,
       "detections_at_025": 0,
-      "seconds": 0.2447328530000732,
+      "seconds": 0.18216620999987754,
       "branches": [
         "rgb",
         "proxy"
@@ -2151,7 +2151,7 @@
       "file": "train__China_Drone_001816__6a90bce954.jpg",
       "instances": 3,
       "detections_at_025": 0,
-      "seconds": 0.2574124309999206,
+      "seconds": 0.20007625900007042,
       "branches": [
         "rgb",
         "proxy"
@@ -2162,7 +2162,7 @@
       "file": "train__India_003861__2b565cf239.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.265637460999983,
+      "seconds": 0.20467543300014768,
       "branches": [
         "rgb",
         "proxy"
@@ -2173,7 +2173,7 @@
       "file": "train__China_MotorBike_001260__fd8a94f7d5.jpg",
       "instances": 4,
       "detections_at_025": 4,
-      "seconds": 0.2228909200000544,
+      "seconds": 0.1590788330001942,
       "branches": [
         "rgb",
         "proxy"
@@ -2184,7 +2184,7 @@
       "file": "train__India_004299__d954d5072c.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.24495594500001516,
+      "seconds": 0.1775279359999331,
       "branches": [
         "rgb",
         "proxy"
@@ -2195,7 +2195,7 @@
       "file": "train__Japan_000846__9bc09dc9d7.jpg",
       "instances": 2,
       "detections_at_025": 5,
-      "seconds": 0.24544690200002606,
+      "seconds": 0.19432116200005112,
       "branches": [
         "rgb",
         "proxy"
@@ -2206,7 +2206,7 @@
       "file": "train__Japan_003139__12f07cc28a.jpg",
       "instances": 8,
       "detections_at_025": 0,
-      "seconds": 0.2539562609999848,
+      "seconds": 0.2114509390000876,
       "branches": [
         "rgb",
         "proxy"
@@ -2217,7 +2217,7 @@
       "file": "train__Norway_000174__9c35690f64.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.6859822510000413,
+      "seconds": 0.6437886999999591,
       "branches": [
         "rgb",
         "proxy"
@@ -2228,7 +2228,7 @@
       "file": "train__India_005798__0e8c563647.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.25491757800000414,
+      "seconds": 0.18219067700010783,
       "branches": [
         "rgb",
         "proxy"
@@ -2239,7 +2239,7 @@
       "file": "train__Japan_004432__47440958c4.jpg",
       "instances": 1,
       "detections_at_025": 0,
-      "seconds": 0.23895500500009348,
+      "seconds": 0.18472524799994972,
       "branches": [
         "rgb",
         "proxy"
@@ -2250,7 +2250,7 @@
       "file": "train__India_000263__e9837592fc.jpg",
       "instances": 0,
       "detections_at_025": 0,
-      "seconds": 0.25262203900001623,
+      "seconds": 0.1927390190001006,
       "branches": [
         "rgb",
         "proxy"
@@ -2261,7 +2261,7 @@
       "file": "train__Japan_002993__8297fb4899.jpg",
       "instances": 2,
       "detections_at_025": 0,
-      "seconds": 0.24257388699993498,
+      "seconds": 0.17996699000013905,
       "branches": [
         "rgb",
         "proxy"
@@ -2269,6 +2269,8 @@
     }
   ],
   "provenance": {
+    "evaluator_sha256": "093b6fe18e6a2915ee0c427abc7dfa95201e67f774e5402136ec437934231c75",
+    "metrics_sha256": "f589eff30f24790ec84368c196d889a7b91b1f410b3e96bf28d7ae0119bc6f56",
     "seed": 42,
     "weights_sha256": "2a1776afb85b95dce01c5a375e6a941f64dfd6f7dba6bdf99359b7c4f82d040d",
     "manifest": [
@@ -2403,9 +2405,9 @@
       "numpy": "2.5.5"
     },
     "runtime": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
-    "run_id": "20261125T134322460215Z",
+    "run_id": "20261125T134833523028Z",
     "selection_sha256": "8902c7a52bfc3cca5df1eae24049fb11db118b82157bd2e0a6b88531ca127cb3",
-    "revision": "3a870e39945f7e7165205c696679415133f48ebb",
+    "revision": "7f9c3d3321c6ed97aa0cb246499fa5c0decc378e",
     "score_floor": 0.001,
     "operating_score": 0.25,
     "synthetic_strength": 0.65
