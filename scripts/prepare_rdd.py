@@ -1,4 +1,5 @@
 """Prepare one resumable, immutable selection per output directory."""
+
 import argparse
 import hashlib
 import io
@@ -7,9 +8,11 @@ import time
 from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 
+from filelock import FileLock
 import requests
 import yaml
 from PIL import Image, ImageDraw
+from core.data.local import original_image
 from core.data.rdd import MAPPING, NAMES, public, read, sample
 
 
@@ -27,7 +30,10 @@ def fetch(url, remaining):
                     raise ValueError(f"HTTP {response.status_code}")
                 response.raise_for_status()
                 data = bytearray()
-                for chunk in response.iter_content(8192):
+                limit = min(remaining[0], 16_000_000)
+                if int(response.headers.get("Content-Length", 0)) > limit:
+                    raise ValueError("byte budget reached")
+                for chunk in response.iter_content(min(8192, max(1, limit))):
                     remaining[0] -= len(chunk)
                     if remaining[0] < 0 or len(data) + len(chunk) > 16_000_000:
                         raise ValueError("byte budget reached")
@@ -36,7 +42,7 @@ def fetch(url, remaining):
         except requests.RequestException:
             if attempt == 2:
                 raise ValueError("network request failed") from None
-            time.sleep(2 ** attempt)
+            time.sleep(2**attempt)
 
 
 def verify(data, row):
@@ -53,71 +59,129 @@ def labels(row):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    for flag, default in (("train",2000),("val",400),("seed",42),("max-images",2400),("max-download-mb",256)):
+    for flag, default in (
+        ("train", 2000),
+        ("val", 400),
+        ("seed", 42),
+        ("max-images", 2400),
+        ("max-download-mb", 256),
+    ):
         p.add_argument("--" + flag, type=int, default=default)
     p.add_argument("--out", type=Path, default=Path("data/processed/rdd"))
-    p.add_argument("--local", type=Path, help="Directory of original export images with exact export filenames")
+    p.add_argument(
+        "--local",
+        type=Path,
+        help="Directory of original export images with exact export filenames",
+    )
+    p.add_argument(
+        "--crosswalk",
+        type=Path,
+        help="Verified export-to-original identity manifest (requires --local)",
+    )
     p.add_argument("--dry-run", action="store_true")
     a = p.parse_args()
-    if min(a.train,a.val,a.max_images,a.max_download_mb) < 0:
+    if a.crosswalk and not a.local:
+        p.error("--crosswalk requires --local")
+    crosswalk = json.loads(a.crosswalk.read_text()) if a.crosswalk else None
+    if min(a.train, a.val, a.max_images, a.max_download_mb) < 0:
         p.error("counts must be nonnegative")
     total = a.train + a.val
-    cap = min(a.max_images,total)
-    val = round(cap*a.val/total) if total else 0
-    rows = sample(read(),cap-val,val,a.seed)
+    cap = min(a.max_images, total)
+    val = round(cap * a.val / total) if total else 0
+    rows = sample(read(), cap - val, val, a.seed)
     manifest = [public(r) for r in rows]
-    print(f"Selected {len(rows)} images, {val} validation requested. Download limit {a.max_download_mb} MB.")
+    print(
+        f"Selected {len(rows)} images, {val} validation requested. Download limit {a.max_download_mb} MB."
+    )
     if a.dry_run:
         return
     root = a.out.resolve()
     root.mkdir(parents=True, exist_ok=True)
+    with FileLock(str(root / ".prepare.lock"), timeout=0):
+        prepare(root, rows, manifest, crosswalk, a)
+
+
+def prepare(root, rows, manifest, crosswalk, a):
     state = root / "selection.json"
-    content = json.dumps({"images":manifest,"mapping":MAPPING,"seed":a.seed},sort_keys=True)
+    content = json.dumps(
+        {"images": manifest, "mapping": MAPPING, "seed": a.seed}, sort_keys=True
+    )
     if state.exists() and state.read_text() != content:
-        p.error("different selection already exists here. Choose a fresh --out directory")
-    state.write_text(content)
+        raise SystemExit(
+            "different selection already exists here. Choose a fresh --out directory"
+        )
+    (root / "selection.tmp").write_text(content)
+    (root / "selection.tmp").replace(state)
     remaining = [a.max_download_mb * 1_000_000]
     skipped, previews, hashes = [], [], {}
     for row in rows:
         name, split = row["file"], row["split"]
         image = root / "images" / split / name
-        label = root / "labels" / split / (Path(name).stem+".txt")
+        label = root / "labels" / split / (Path(name).stem + ".txt")
         try:
             if image.exists():
                 data = image.read_bytes()
             elif a.local:
-                data = (a.local / name).read_bytes()
+                data = (
+                    (a.local / name).read_bytes()
+                    if crosswalk is None
+                    else original_image(a.local, row, crosswalk)
+                )
             elif remaining[0] > 0:
                 data = fetch(row["url"], remaining)
             else:
                 raise ValueError("byte budget reached")
-            im = verify(data,row)
-            label.parent.mkdir(parents=True,exist_ok=True)
-            image.parent.mkdir(parents=True,exist_ok=True)
+            im = verify(data, row)
+            label.parent.mkdir(parents=True, exist_ok=True)
+            image.parent.mkdir(parents=True, exist_ok=True)
             label.write_text(labels(row))
             if not image.exists():
                 temp = image.with_suffix(".part")
                 temp.write_bytes(data)
                 temp.replace(image)
             hashes[name] = hashlib.sha256(data).hexdigest()
-            if len(previews)<8:
+            if len(previews) < 8:
                 draw = ImageDraw.Draw(im)
-                for c,x,y,w,h in row["boxes"]:
-                    draw.rectangle(((x-w/2)*im.width,(y-h/2)*im.height,(x+w/2)*im.width,(y+h/2)*im.height),outline="red",width=3)
-                im.thumbnail((200,150))
+                for c, x, y, w, h in row["boxes"]:
+                    draw.rectangle(
+                        (
+                            (x - w / 2) * im.width,
+                            (y - h / 2) * im.height,
+                            (x + w / 2) * im.width,
+                            (y + h / 2) * im.height,
+                        ),
+                        outline="red",
+                        width=3,
+                    )
+                im.thumbnail((200, 150))
                 previews.append(im)
-        except (ValueError,OSError) as exc:
-            skipped.append({"file":name,"reason":str(exc)})
+        except (ValueError, OSError) as exc:
+            skipped.append({"file": name, "reason": str(exc)})
     if previews:
-        sheet = Image.new("RGB",(200*min(4,len(previews)),150*((len(previews)+3)//4)))
-        for i,im in enumerate(previews):
-            sheet.paste(im,(200*(i%4),150*(i//4)))
-        sheet.save(root/"preview.jpg")
-    (root/"report.json").write_text(json.dumps({"skipped":skipped,"sha256":hashes},indent=2))
-    if skipped and any((root/"images"/r["split"]/r["file"]).exists() and r["file"] not in hashes for r in rows):
-        raise SystemExit("Existing image failed validation. Repair the reported file before training.")
-    (root/"data.yaml").write_text(yaml.safe_dump(dict(path=str(root),train="images/train",val="images/val",names=NAMES)))
-    print(f"Verified {len(hashes)} pairs. Skipped {len(skipped)}. See {root}/report.json")
+        sheet = Image.new(
+            "RGB", (200 * min(4, len(previews)), 150 * ((len(previews) + 3) // 4))
+        )
+        for i, im in enumerate(previews):
+            sheet.paste(im, (200 * (i % 4), 150 * (i // 4)))
+        sheet.save(root / "preview.jpg")
+    (root / "report.json").write_text(
+        json.dumps({"skipped": skipped, "sha256": hashes}, indent=2)
+    )
+    if skipped and any(
+        (root / "images" / r["split"] / r["file"]).exists() and r["file"] not in hashes
+        for r in rows
+    ):
+        raise SystemExit(
+            "Existing image failed validation. Repair the reported file before training."
+        )
+    (root / "data.yaml").write_text(
+        yaml.safe_dump(
+            dict(path=str(root), train="images/train", val="images/val", names=NAMES)
+        )
+    )
+    print(
+        f"Verified {len(hashes)} pairs. Skipped {len(skipped)}. See {root}/report.json"
+    )
 
 
 if __name__ == "__main__":

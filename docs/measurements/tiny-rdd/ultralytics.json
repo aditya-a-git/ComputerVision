@@ -1,0 +1,67 @@
+{
+  "config": {
+    "weights": "models/rdd_best.pt",
+    "data": "data/processed/demo/data.yaml",
+    "device": "cpu",
+    "imgsz": 320
+  },
+  "map50": 0.005128764110390406,
+  "map": 0.0009349827991338305,
+  "classes": [
+    {
+      "Class": "alligator crack",
+      "Images": 6,
+      "Instances": 8,
+      "Box-P": 0.01762,
+      "Box-R": 0.125,
+      "Box-F1": 0.03088,
+      "mAP50": 0.02309,
+      "mAP75": 0.00035,
+      "mAP50-95": 0.00352
+    },
+    {
+      "Class": "longitudinal crack",
+      "Images": 9,
+      "Instances": 17,
+      "Box-P": 0.0066,
+      "Box-R": 0.05882,
+      "Box-F1": 0.01187,
+      "mAP50": 0.00255,
+      "mAP75": 0.00039,
+      "mAP50-95": 0.00116
+    },
+    {
+      "Class": "other corruption",
+      "Images": 1,
+      "Instances": 1,
+      "Box-P": 0.0,
+      "Box-R": 0.0,
+      "Box-F1": 0.0,
+      "mAP50": 0.0,
+      "mAP75": 0.0,
+      "mAP50-95": 0.0
+    },
+    {
+      "Class": "pothole",
+      "Images": 3,
+      "Instances": 3,
+      "Box-P": 0.0,
+      "Box-R": 0.0,
+      "Box-F1": 0.0,
+      "mAP50": 0.0,
+      "mAP75": 0.0,
+      "mAP50-95": 0.0
+    },
+    {
+      "Class": "transverse crack",
+      "Images": 4,
+      "Instances": 8,
+      "Box-P": 0.0,
+      "Box-R": 0.0,
+      "Box-F1": 0.0,
+      "mAP50": 0.0,
+      "mAP75": 0.0,
+      "mAP50-95": 0.0
+    }
+  ]
+}

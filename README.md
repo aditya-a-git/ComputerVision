@@ -1,2 +1,65 @@
 # RoadFusion AI
-Local academic road-defect diagnostics. From the repository root, use Python 3.11, run `python -m venv .venv`, activate with `source .venv/bin/activate`, install with `pip install -r requirements.txt`, then run `streamlit run app.py`. For CPU-only PyTorch install torch and torchvision from the official CPU wheel index first.
+Adaptive multimodal road defect diagnostics is a local Streamlit demonstrator. Use a road photograph or short MP4, simulate weather, compare RGB inference with a second contrast-enhanced RGB pass, and route inference using a simulated device temperature. The CARD explorer reads real camera and depth data separately.
+
+## Run locally
+
+From the repository root on Linux or macOS, create a Python 3.11 environment. Python 3.12 was also tested. On Linux, install the CPU PyTorch wheels first.
+
+```bash
+python3.11 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+# Linux CPU installation
+python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r requirements.txt
+streamlit run app.py
+```
+
+On macOS use the default PyTorch wheel index. On Windows activate with `.venv\Scripts\activate`. The Home, simulation, recorded results and methods views work in a clean checkout. The Environment Lab includes a labeled synthetic calibration pattern. Network access is only needed for installation and explicit data or pretrained-weight retrieval.
+
+## Prepare a small sample
+
+```bash
+python -m scripts.inspect_rdd
+python -m scripts.prepare_rdd --dry-run
+python -m scripts.prepare_rdd --train 100 --val 24 --max-download-mb 100 --out data/processed/demo
+```
+
+Inspection writes normalized JSONL, a Hugging Face DatasetDict cache, mapping JSON, counts and class histogram under local data/cache locations. Preparation preserves the export split, favors class coverage, retains genuine negative images and writes an immutable selection, integrity report, YOLO image/label pairs, preview montage and data.yaml. Default selection is 2,000 train and 400 validation with a 256 MB transfer budget. An exhausted budget can yield a partial selection. Inspect report.json for skips and rerun with the same selection to resume. Review preview.jpg before training. Choose a different output directory to change seed or selection. The split field determines membership even when filenames start with train__.
+
+For existing export images, add `--local /path/to/export-images` to the same preparation command. Original RDD files with different names require an independently verified crosswalk. See the dataset provenance document for the schema and rules.
+
+## Train and evaluate
+
+```bash
+python -m scripts.train --data data/processed/demo/data.yaml --epochs 8 --imgsz 320 --batch 8 --device cpu --seed 42 --out runs/demo
+mkdir -p models
+cp runs/demo/rdd/weights/best.pt models/rdd_best.pt
+python -m scripts.evaluate --data data/processed/demo/data.yaml --weights models/rdd_best.pt --imgsz 320
+python -m scripts.compare --root data/processed/demo --limit 24
+```
+
+Use the checkpoint path printed by the trainer on repeat runs. The first training invocation may download the YOLO11n initialization. For offline training supply a local YOLO11n initialization with `--base`. Streamlit only loads an existing trusted road-trained checkpoint and validates its five class names. To select another local checkpoint set `ROADFUSION_WEIGHTS`. No weights are tracked in Git. The original training workspace has the tiny trained checkpoint and a Home download button. The one-epoch smoke checkpoint is separate. For a larger experiment increase the prepared sample and epochs or open [the Colab notebook](notebooks/train_yolo.ipynb), upload a zip with images/, labels/ and data.yaml at its root, and save the returned checkpoint under models/.
+
+## CARD access
+
+Accept the Germany Batch 1 dataset conditions under your own Hugging Face account, then run:
+
+```bash
+hf auth login
+python -m scripts.inspect_card
+python -m scripts.download_card_sample --dry-run
+python -m scripts.download_card_sample --max-files 5 --max-mb 32
+```
+
+The CLI resolves a pinned revision and requests one coherent file group. The public listing worked without credentials. Fetching the selected frame anonymously returned HTTP 401. The Explorer reads the exact local paths under data/card. CARD classes keep their source IDs. No CARD metric or RDD-to-CARD class mapping has been established.
+
+## Evidence and operation
+
+- [Demo script](docs/DEMO_SCRIPT.md) walks through the eight views.
+- [Results](docs/RESULTS.md) gives the tiny-sample measurements and failure cases.
+- [Experiment protocol](docs/EXPERIMENTS.md) defines metrics and runtime boundaries.
+- [Dataset provenance and licenses](docs/DATASET_PROVENANCE.md) documents sources and access conditions.
+- [Stage history, commands and file tree](docs/IMPLEMENTATION_STATUS.md) records verification and limitations.
+
+Run `python -m pytest -q` for the offline suite. CI installs dependencies, checks imports and lint, then runs tests without model or dataset downloads.
