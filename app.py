@@ -16,6 +16,9 @@ def main():
     if upload:
         rgb = np.asarray(Image.open(upload).convert("RGB"))
         st.image([rgb, transform(rgb,condition,strength)],caption=["Original","Simulation"])
+    with st.expander("CARD Explorer"):
+        from core.data.card import explorer
+        explorer()
     if not Path("models/rdd_best.pt").is_file():
         st.info("Model not trained / weights missing. Prepare the RDD sample and train YOLO11n.")
 
