@@ -1,0 +1,63 @@
+{
+  "weights_sha256": "2a1776afb85b95dce01c5a375e6a941f64dfd6f7dba6bdf99359b7c4f82d040d",
+  "map50": 0.005329835705340157,
+  "map5095": 0.0013109160973791545,
+  "val": 7676,
+  "classes": [
+    {
+      "Class": "alligator crack",
+      "Images": 1761,
+      "Instances": 2220,
+      "Box-P": 0.05201,
+      "Box-R": 0.11577,
+      "Box-F1": 0.07177,
+      "mAP50": 0.02253,
+      "mAP75": 0.00161,
+      "mAP50-95": 0.00549
+    },
+    {
+      "Class": "longitudinal crack",
+      "Images": 2591,
+      "Instances": 4773,
+      "Box-P": 0.01018,
+      "Box-R": 0.01718,
+      "Box-F1": 0.01278,
+      "mAP50": 0.00188,
+      "mAP75": 5e-05,
+      "mAP50-95": 0.00044
+    },
+    {
+      "Class": "other corruption",
+      "Images": 1010,
+      "Instances": 1246,
+      "Box-P": 0.00572,
+      "Box-R": 0.00642,
+      "Box-F1": 0.00605,
+      "mAP50": 0.002,
+      "mAP75": 0.00019,
+      "mAP50-95": 0.00057
+    },
+    {
+      "Class": "pothole",
+      "Images": 782,
+      "Instances": 1433,
+      "Box-P": 0.0,
+      "Box-R": 0.0,
+      "Box-F1": 0.0,
+      "mAP50": 1e-05,
+      "mAP75": 0.0,
+      "mAP50-95": 0.0
+    },
+    {
+      "Class": "transverse crack",
+      "Images": 1487,
+      "Instances": 2276,
+      "Box-P": 0.0,
+      "Box-R": 0.0,
+      "Box-F1": 0.0,
+      "mAP50": 0.00024,
+      "mAP75": 1e-05,
+      "mAP50-95": 5e-05
+    }
+  ]
+}

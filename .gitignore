@@ -6,8 +6,9 @@ __pycache__/
 .streamlit/secrets.toml
 /data/
 runs/
-models/
+/models/*
 *.pt
+!/models/rdd_best.pt
 *.mp4
 *.avi
 token

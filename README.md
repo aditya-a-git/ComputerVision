@@ -34,12 +34,23 @@ For existing export images, add `--local /path/to/export-images` to the same pre
 ```bash
 python -m scripts.train --data data/processed/demo/data.yaml --epochs 8 --imgsz 320 --batch 8 --device cpu --seed 42 --out runs/demo
 mkdir -p models
-cp runs/demo/rdd/weights/best.pt models/rdd_best.pt
-python -m scripts.evaluate --data data/processed/demo/data.yaml --weights models/rdd_best.pt --imgsz 320
-python -m scripts.compare --root data/processed/demo --limit 24
+cp runs/demo/rdd/weights/best.pt models/rdd_pilot.pt
+python -m scripts.evaluate --data data/processed/demo/data.yaml --weights models/rdd_pilot.pt --imgsz 320
+python -m scripts.compare --root data/processed/demo --weights models/rdd_pilot.pt --limit 24
 ```
 
-Use the checkpoint path printed by the trainer on repeat runs. The first training invocation may download the YOLO11n initialization. For offline training supply a local YOLO11n initialization with `--base`. Streamlit only loads an existing trusted road-trained checkpoint and validates its five class names. To select another local checkpoint set `ROADFUSION_WEIGHTS`. No weights are tracked in Git. The original training workspace has the tiny trained checkpoint and a Home download button. The one-epoch smoke checkpoint is separate. For a larger experiment increase the prepared sample and epochs or open [the Colab notebook](notebooks/train_yolo.ipynb), upload a zip with images/, labels/ and data.yaml at its root, and save the returned checkpoint under models/.
+Use the checkpoint path printed by the trainer on repeat runs. The first training invocation may download the YOLO11n initialization. For offline training supply a local YOLO11n initialization with `--base`. Streamlit only loads an existing trusted road-trained checkpoint and validates its five class names. To select another local checkpoint set `ROADFUSION_WEIGHTS`. The repository includes the deployable five-class full-data checkpoint at `models/rdd_best.pt`. A fresh checkout can immediately run Detect on a local road image. The one-epoch smoke checkpoint is separate. For a larger experiment increase the prepared sample and epochs or open [the Colab notebook](notebooks/train_yolo.ipynb), upload a zip with images/, labels/ and data.yaml at its root, and save the returned checkpoint under models/.
+
+## Full RDD training
+
+The full-data checkpoint uses all 30,707 training images from the export. All 7,676 validation images are held out. Full acquisition is opt-in and reads the original signed image URLs. It retains a 320-pixel-long-edge JPEG per verified image for the CPU experiment.
+
+```bash
+python -m scripts.prepare_rdd_full --all-images --workers 16
+python -m scripts.train_full --out runs/full320
+```
+
+The trainer verifies coverage, label files and split integrity, runs eight epochs, and writes final validation metrics to result.json. Recover an interrupted run from its latest completed epoch with `python -m scripts.train_full --out runs/full320 --resume`. [Checkpoint measurements](docs/measurements/full-rdd/)
 
 ## CARD access
 

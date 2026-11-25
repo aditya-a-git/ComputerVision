@@ -1,0 +1,9 @@
+{
+  "epoch": 2,
+  "planned_epochs": 8,
+  "train_images": 30707,
+  "validation_images": 7676,
+  "map50": 0.16703,
+  "map5095": 0.06761,
+  "sha256": "ec812673a50a9fcba8a0951caa892b3505ce0bdfa36ba85c4c5ebd21fb143dce"
+}

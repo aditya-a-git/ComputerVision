@@ -1,0 +1,16 @@
+{
+  "manifest_sha256": {
+    "train": "a02ff10a081f8ad6566f9d16606671407916020d6e5a9b1e1180bbe56f15548a",
+    "val": "750673e18672ca0bb870fed4210af58e7b28b5c240febfdb6d76b551c3d96bcd"
+  },
+  "manifest_order": "source NDJSON order within split; UTF-8 records: filename TAB image_sha256 TAB label_sha256 LF",
+  "export_sha256": "38e2347e2bf76ab40e08490c8f77af15dd75148729bf28082173e2a53b36b757",
+  "versions": {
+    "ultralytics": "8.4.218",
+    "torch": "2.15.0+cpu",
+    "torchvision": "0.29.2+cpu",
+    "numpy": "2.5.5",
+    "pillow": "12.3.0"
+  },
+  "acquisition": "original export pixels decoded and dimension-checked, then Pillow thumbnail((320,320), LANCZOS) encoded to JPEG quality 90; normalized labels unchanged"
+}

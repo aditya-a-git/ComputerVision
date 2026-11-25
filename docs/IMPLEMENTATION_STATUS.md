@@ -79,3 +79,7 @@ docs/
   measurements/tiny-rdd/{report.json,summary.csv,selection.json,training.csv,
                          training-provenance.json,ultralytics.json}
 ```
+
+## Full-data training milestone
+
+Published epoch 2 of the eight-epoch full RDD run. Every epoch covers all 30,707 training images. Validation on the 7,676 held-out images measured mAP@0.50 0.16703 and mAP@0.50:0.95 0.06761. The downloadable checkpoint is models/rdd_best.pt. Its SHA-256 is ec812673a50a9fcba8a0951caa892b3505ce0bdfa36ba85c4c5ebd21fb143dce. Training is continuing in the original workspace.
