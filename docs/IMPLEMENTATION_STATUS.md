@@ -83,3 +83,9 @@ docs/
 ## Full-data training milestone
 
 Published epoch 2 of the eight-epoch full RDD run. Every epoch covers all 30,707 training images. Validation on the 7,676 held-out images measured mAP@0.50 0.16703 and mAP@0.50:0.95 0.06761. The downloadable checkpoint is models/rdd_best.pt. Its SHA-256 is ec812673a50a9fcba8a0951caa892b3505ce0bdfa36ba85c4c5ebd21fb143dce. Training is continuing in the original workspace.
+
+## Full RDD2022 training follow-up
+
+The complete export supplied 30,707 training and 7,676 validation images. All were retrieved or reused from verified local images, decoded at the recorded dimensions, resized proportionally to a maximum edge of 320 pixels and saved as JPEG at quality 90. All original class mappings, normalized coordinates, negative images and split assignments were retained. Ultralytics removed one duplicate annotation in each split. Image loss and cross-split byte duplication checks passed.
+
+YOLO11n was initialized from pretrained yolo11n.pt and trained for eight epochs at 320 pixels, batch size 16, seed 42, workers 0 on CPU. The loader used fraction 1.0 and retained its final incomplete batch. The best validation checkpoint was reloaded and evaluated on all 7,676 validation frames before installation as models/rdd_best.pt. The 100-image pilot is archived locally as models/rdd_best_100image.pt. See [full training measurements](measurements/full-rdd/validation.json).

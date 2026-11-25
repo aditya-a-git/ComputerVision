@@ -1,9 +1,9 @@
 {
-  "epoch": 2,
-  "planned_epochs": 8,
+  "completed_epochs": 8,
+  "checkpoint_epoch": 8,
   "train_images": 30707,
   "validation_images": 7676,
-  "map50": 0.16703,
-  "map5095": 0.06761,
-  "sha256": "ec812673a50a9fcba8a0951caa892b3505ce0bdfa36ba85c4c5ebd21fb143dce"
+  "map50": 0.36676540739378116,
+  "map5095": 0.17934720987775474,
+  "sha256": "f98599c1a82252720b38e47a1e5a829310a4043cd2b48399c48ee87274fa2357"
 }

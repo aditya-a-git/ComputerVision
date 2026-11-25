@@ -68,7 +68,7 @@ The CLI resolves a pinned revision and requests one coherent file group. The pub
 ## Evidence and operation
 
 - [Demo script](docs/DEMO_SCRIPT.md) walks through the eight views.
-- [Results](docs/RESULTS.md) gives the tiny-sample measurements and failure cases.
+- [Results](docs/RESULTS.md) gives the full-data validation measurements and the earlier pilot failure cases.
 - [Experiment protocol](docs/EXPERIMENTS.md) defines metrics and runtime boundaries.
 - [Dataset provenance and licenses](docs/DATASET_PROVENANCE.md) documents sources and access conditions.
 - [Stage history, commands and file tree](docs/IMPLEMENTATION_STATUS.md) records verification and limitations.
