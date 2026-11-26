@@ -86,3 +86,25 @@ streamlit run app.py
 ```
 
 Open **Experiments / Results** for the recorded CPU comparison or a new local run. Each finished local run includes the verified validation manifest, predictions, timings, exports and two sample previews. The published summary also works offline. **Fusion Lab** shows branch detections, quality estimates and the decision behind each fused candidate. **Virtual Edge Device** records explicit controller steps from a manual temperature or a bounded automatic ramp. [Experiment definitions and timing](docs/EXPERIMENTS.md)
+## Prepare full RDD images at 640 px (NVIDIA GPU)
+
+Use this instead of the legacy full320 preparer when training at 640 px. Images
+are retrieved or imported at their **original dimensions**, verified, then
+downscaled only when their longest edge exceeds 640 px. This does **not**
+upscale the previously prepared full320 images. The default without
+`--imgsz` is still 320 px for backwards compatibility.
+
+```powershell
+python -m scripts.prepare_rdd_full --all-images --imgsz 640 --workers 8
+python -m scripts.train --data data/processed/full640/data.yaml --base models/rdd_best.pt --epochs 30 --imgsz 640 --batch 8 --device 0 --out runs/full640
+python -m scripts.evaluate --data data/processed/full640/data.yaml --weights runs/full640/rdd/weights/best.pt --imgsz 640 --device 0
+```
+
+The full preparer also accepts `--out data/processed/my_dataset` and
+`--local D:path	oerifiedoriginals` (source files must use exact export
+filenames and match the recorded image dimensions). An existing output folder
+cannot silently switch resolutions; use a distinct folder for each image size.
+The script records its size in `preparation.json`, errors in `errors.json`,
+and writes `data.yaml` only after all images are prepared successfully.
+Signed source image links may expire; if downloads fail, use independently
+verified original files rather than substituting unrelated images.

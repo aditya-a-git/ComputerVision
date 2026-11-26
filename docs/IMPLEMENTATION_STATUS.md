@@ -97,3 +97,14 @@ The environment CLI evaluated six conditions twice on the same 12 original-resol
 The Fusion Lab records each post-detector candidate's source indices, matching decision and final score filter. The edge simulator records controller steps, stream health, executed detector branches, resolution and measured CPU time. Reset starts a new controller and pause retains the ramp position.
 
 Verification used Python 3.12 on CPU. The full suite passed 32 tests, Ruff E9/F and compileall passed, and the Streamlit health endpoint returned ok. AppTest exercised all eight pages in a workspace without a checkpoint, prepared images or CARD. Chromium exercised real image and four-frame MP4 uploads, stream disconnection and restoration, the bounded automatic ramp with pause/resume/reset, and recorded comparison charts and previews. GPU execution, gated CARD frames and physical edge performance were outside this verification.
+## Configurable full-resolution RDD preparation
+
+`scripts.prepare_rdd_full` now supports `--imgsz 640`, selects
+`data/processed/full640` automatically, and retains its previous 320 px
+default. It verifies original downloaded or local image dimensions before
+resizing, refuses to reuse 320 px cached output at 640 px, keeps per-resolution
+output folders distinct, and supports verified exact-filename local images.
+Focused tests cover 640 px resizing, no-upscale for already-small originals,
+resumable runs, avoiding 320 px cache reuse, and resolution mismatch guards.
+The full 38,383-image download and NVIDIA training still require execution
+on the teammate's machine; they were not performed for this code change.
