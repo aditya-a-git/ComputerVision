@@ -1,0 +1,758 @@
+{
+  "config": {
+    "seed": 42,
+    "strength": 0.65,
+    "conditions": [
+      "daylight",
+      "darkness",
+      "fog",
+      "rain",
+      "vibration",
+      "noise"
+    ],
+    "sample_count": 12,
+    "root": "data/processed/demo",
+    "selection_sha256": "01c473ebaaaca309302a2479371cbb4cf6b0a2638cb370c04aece313f0e92b44",
+    "weights": "models/rdd_best.pt",
+    "weights_sha256": "f98599c1a82252720b38e47a1e5a829310a4043cd2b48399c48ee87274fa2357",
+    "device": "cpu",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "machine": "x86_64",
+    "evaluator_sha256": "3f5d3e473d89ebc630f56fe14e2ec4c4a74f2327f795c6c1215d3103f35fec78",
+    "metrics_sha256": "f589eff30f24790ec84368c196d889a7b91b1f410b3e96bf28d7ae0119bc6f56",
+    "python": "3.12.14",
+    "versions": {
+      "torch": "2.15.0+cpu",
+      "ultralytics": "8.4.219",
+      "numpy": "2.5.4",
+      "opencv-python": "4.14.0.94",
+      "pillow": "12.3.0"
+    },
+    "size": 320,
+    "score_floor": 0.001,
+    "nms_iou": 0.7,
+    "operating_score": 0.25,
+    "matching_iou": 0.5,
+    "class_names": [
+      "alligator crack",
+      "longitudinal crack",
+      "other corruption",
+      "pothole",
+      "transverse crack"
+    ],
+    "warmup_calls": 1
+  },
+  "summary": [
+    {
+      "condition": "daylight",
+      "map50": 0.37647498003722984,
+      "map": 0.21831373318751496,
+      "precision": 0.5,
+      "recall": 0.16666666666666666,
+      "f1": 0.25,
+      "fp": 3,
+      "fn": 15,
+      "mean_detector_ms": 24.903140333336182,
+      "mean_ms": 47.26796433334357,
+      "p50_ms": 26.56357949999233,
+      "p95_ms": 115.19841280001793,
+      "processed_fps": 21.15597771352688,
+      "delta_map50": 0.0,
+      "delta_recall": 0.0,
+      "delta_fps": 0.0,
+      "latency_change_pct": 0.0
+    },
+    {
+      "condition": "darkness",
+      "map50": 0.3590986272112477,
+      "map": 0.17985677168814163,
+      "precision": 0.6,
+      "recall": 0.16666666666666666,
+      "f1": 0.2608695652173913,
+      "fp": 2,
+      "fn": 15,
+      "mean_detector_ms": 24.02899333332679,
+      "mean_ms": 60.59422025000553,
+      "p50_ms": 33.51893100000325,
+      "p95_ms": 155.9610452000015,
+      "processed_fps": 16.50322416682817,
+      "delta_map50": -0.017376352825982155,
+      "delta_recall": 0.0,
+      "delta_fps": -4.652753546698712,
+      "latency_change_pct": 28.19299731776561
+    },
+    {
+      "condition": "fog",
+      "map50": 0.4344567357284868,
+      "map": 0.24969649865535692,
+      "precision": 0.6666666666666666,
+      "recall": 0.1111111111111111,
+      "f1": 0.19047619047619047,
+      "fp": 1,
+      "fn": 16,
+      "mean_detector_ms": 22.82476416667123,
+      "mean_ms": 57.82062124999735,
+      "p50_ms": 34.721856000004436,
+      "p95_ms": 143.5614189999967,
+      "processed_fps": 17.294867789059698,
+      "delta_map50": 0.057981755691256964,
+      "delta_recall": -0.05555555555555555,
+      "delta_fps": -3.8611099244671827,
+      "latency_change_pct": 22.32517745472227
+    },
+    {
+      "condition": "rain",
+      "map50": 0.24687982332067793,
+      "map": 0.09771817197194999,
+      "precision": 0.4,
+      "recall": 0.1111111111111111,
+      "f1": 0.17391304347826086,
+      "fp": 3,
+      "fn": 16,
+      "mean_detector_ms": 25.78059575000206,
+      "mean_ms": 71.85235916666007,
+      "p50_ms": 36.68073699998331,
+      "p95_ms": 200.3903085499587,
+      "processed_fps": 13.91742750826762,
+      "delta_map50": -0.12959515671655192,
+      "delta_recall": -0.05555555555555555,
+      "delta_fps": -7.23855020525926,
+      "latency_change_pct": 52.01069091941891
+    },
+    {
+      "condition": "vibration",
+      "map50": 0.30646707527895645,
+      "map": 0.18578790672776804,
+      "precision": 0.5,
+      "recall": 0.05555555555555555,
+      "f1": 0.1,
+      "fp": 1,
+      "fn": 17,
+      "mean_detector_ms": 20.36794308332901,
+      "mean_ms": 131.96032233332744,
+      "p50_ms": 43.1264934999831,
+      "p95_ms": 405.1312655499686,
+      "processed_fps": 7.578035445185052,
+      "delta_map50": -0.0700079047582734,
+      "delta_recall": -0.1111111111111111,
+      "delta_fps": -13.577942268341829,
+      "latency_change_pct": 179.17496383536985
+    },
+    {
+      "condition": "noise",
+      "map50": 0.20041019196259255,
+      "map": 0.07782883733117248,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "fp": 2,
+      "fn": 18,
+      "mean_detector_ms": 26.13943816666146,
+      "mean_ms": 172.62577399999657,
+      "p50_ms": 47.97629699996264,
+      "p95_ms": 629.5576379000037,
+      "processed_fps": 5.792877719407183,
+      "delta_map50": -0.1760647880746373,
+      "delta_recall": -0.16666666666666666,
+      "delta_fps": -15.363099994119697,
+      "latency_change_pct": 265.2067027524255
+    }
+  ],
+  "classes": [
+    {
+      "condition": "daylight",
+      "name": "alligator crack",
+      "instances": 4,
+      "ap50": 0.5037216487606206,
+      "ap": 0.3308194649252159,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5,
+      "fp": 2,
+      "fn": 2
+    },
+    {
+      "condition": "daylight",
+      "name": "longitudinal crack",
+      "instances": 6,
+      "ap50": 0.4598209820982098,
+      "ap": 0.19270643135742144,
+      "precision": 1.0,
+      "recall": 0.16666666666666666,
+      "f1": 0.2857142857142857,
+      "fp": 0,
+      "fn": 5
+    },
+    {
+      "condition": "daylight",
+      "name": "other corruption",
+      "instances": 1,
+      "ap50": 0.19999999999999996,
+      "ap": 0.14333333333333337,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "condition": "daylight",
+      "name": "pothole",
+      "instances": 1,
+      "ap50": 0.5,
+      "ap": 0.35,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 1
+    },
+    {
+      "condition": "daylight",
+      "name": "transverse crack",
+      "instances": 6,
+      "ap50": 0.21883226932731883,
+      "ap": 0.07470943632160412,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 6
+    },
+    {
+      "condition": "darkness",
+      "name": "alligator crack",
+      "instances": 4,
+      "ap50": 0.3896173401123898,
+      "ap": 0.2154057876830154,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5,
+      "fp": 2,
+      "fn": 2
+    },
+    {
+      "condition": "darkness",
+      "name": "longitudinal crack",
+      "instances": 6,
+      "ap50": 0.49020089512043274,
+      "ap": 0.16634612919954267,
+      "precision": 1.0,
+      "recall": 0.16666666666666666,
+      "f1": 0.2857142857142857,
+      "fp": 0,
+      "fn": 5
+    },
+    {
+      "condition": "darkness",
+      "name": "other corruption",
+      "instances": 1,
+      "ap50": 0.3333333333333334,
+      "ap": 0.15333333333333332,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 1
+    },
+    {
+      "condition": "darkness",
+      "name": "pothole",
+      "instances": 1,
+      "ap50": 0.3333333333333334,
+      "ap": 0.2333333333333334,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 1
+    },
+    {
+      "condition": "darkness",
+      "name": "transverse crack",
+      "instances": 6,
+      "ap50": 0.24900823415674894,
+      "ap": 0.1308652748914834,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 6
+    },
+    {
+      "condition": "fog",
+      "name": "alligator crack",
+      "instances": 4,
+      "ap50": 0.3102665870035279,
+      "ap": 0.17879893592807558,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 4
+    },
+    {
+      "condition": "fog",
+      "name": "longitudinal crack",
+      "instances": 6,
+      "ap50": 0.47927310295432357,
+      "ap": 0.2243653112383838,
+      "precision": 1.0,
+      "recall": 0.3333333333333333,
+      "f1": 0.5,
+      "fp": 0,
+      "fn": 4
+    },
+    {
+      "condition": "fog",
+      "name": "other corruption",
+      "instances": 1,
+      "ap50": 0.19999999999999996,
+      "ap": 0.039999999999999994,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "condition": "fog",
+      "name": "pothole",
+      "instances": 1,
+      "ap50": 1.0,
+      "ap": 0.7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 1
+    },
+    {
+      "condition": "fog",
+      "name": "transverse crack",
+      "instances": 6,
+      "ap50": 0.1827439886845827,
+      "ap": 0.1053182461103253,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 6
+    },
+    {
+      "condition": "rain",
+      "name": "alligator crack",
+      "instances": 4,
+      "ap50": 0.17114568599717114,
+      "ap": 0.05217548822551429,
+      "precision": 0.5,
+      "recall": 0.25,
+      "f1": 0.3333333333333333,
+      "fp": 1,
+      "fn": 3
+    },
+    {
+      "condition": "rain",
+      "name": "longitudinal crack",
+      "instances": 6,
+      "ap50": 0.28927103236639445,
+      "ap": 0.06902230072631323,
+      "precision": 1.0,
+      "recall": 0.16666666666666666,
+      "f1": 0.2857142857142857,
+      "fp": 0,
+      "fn": 5
+    },
+    {
+      "condition": "rain",
+      "name": "other corruption",
+      "instances": 1,
+      "ap50": 0.11111111111111112,
+      "ap": 0.07222222222222223,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 2,
+      "fn": 1
+    },
+    {
+      "condition": "rain",
+      "name": "pothole",
+      "instances": 1,
+      "ap50": 0.5,
+      "ap": 0.25,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 1
+    },
+    {
+      "condition": "rain",
+      "name": "transverse crack",
+      "instances": 6,
+      "ap50": 0.1628712871287129,
+      "ap": 0.04517084868570017,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 6
+    },
+    {
+      "condition": "vibration",
+      "name": "alligator crack",
+      "instances": 4,
+      "ap50": 0.35466760961810473,
+      "ap": 0.12607924761023742,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 4
+    },
+    {
+      "condition": "vibration",
+      "name": "longitudinal crack",
+      "instances": 6,
+      "ap50": 0.17766776677667764,
+      "ap": 0.10286028602860287,
+      "precision": 0.5,
+      "recall": 0.16666666666666666,
+      "f1": 0.25,
+      "fp": 1,
+      "fn": 5
+    },
+    {
+      "condition": "vibration",
+      "name": "other corruption",
+      "instances": 1,
+      "ap50": 0.0,
+      "ap": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 1
+    },
+    {
+      "condition": "vibration",
+      "name": "pothole",
+      "instances": 1,
+      "ap50": 1.0,
+      "ap": 0.7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 1
+    },
+    {
+      "condition": "vibration",
+      "name": "transverse crack",
+      "instances": 6,
+      "ap50": 0.0,
+      "ap": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 6
+    },
+    {
+      "condition": "noise",
+      "name": "alligator crack",
+      "instances": 4,
+      "ap50": 0.3896264626462647,
+      "ap": 0.1656953195319532,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 4
+    },
+    {
+      "condition": "noise",
+      "name": "longitudinal crack",
+      "instances": 6,
+      "ap50": 0.26225948066504773,
+      "ap": 0.08674919715691247,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 6
+    },
+    {
+      "condition": "noise",
+      "name": "other corruption",
+      "instances": 1,
+      "ap50": 0.0,
+      "ap": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 2,
+      "fn": 1
+    },
+    {
+      "condition": "noise",
+      "name": "pothole",
+      "instances": 1,
+      "ap50": 0.3333333333333334,
+      "ap": 0.13333333333333336,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 1
+    },
+    {
+      "condition": "noise",
+      "name": "transverse crack",
+      "instances": 6,
+      "ap50": 0.016831683168316833,
+      "ap": 0.0033663366336633667,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0,
+      "fp": 0,
+      "fn": 6
+    }
+  ],
+  "manifest": [
+    {
+      "boxes": [
+        [
+          0,
+          0.29499,
+          0.91664,
+          0.41497,
+          0.14832
+        ],
+        [
+          2,
+          0.88167,
+          0.59666,
+          0.10996,
+          0.20829
+        ],
+        [
+          4,
+          0.54333,
+          0.845,
+          0.65997,
+          0.14333
+        ],
+        [
+          4,
+          0.69499,
+          0.74498,
+          0.18329,
+          0.03832
+        ],
+        [
+          4,
+          0.70163,
+          0.66999,
+          0.14163,
+          0.03497
+        ],
+        [
+          1,
+          0.66999,
+          0.60664,
+          0.06665,
+          0.0883
+        ],
+        [
+          1,
+          0.58,
+          0.74498,
+          0.05328,
+          0.2033
+        ],
+        [
+          4,
+          0.74667,
+          0.86999,
+          0.18164,
+          0.06496
+        ]
+      ],
+      "file": "train__Japan_003139__12f07cc28a.jpg",
+      "height": 600,
+      "split": "val",
+      "width": 600,
+      "sha256": "ab98ffaa560524dac5e3e3dffadda0a903d14d44b1643a08c1578b6353b037f4"
+    },
+    {
+      "boxes": [],
+      "file": "train__Norway_003924__52050dff57.jpg",
+      "height": 2041,
+      "split": "val",
+      "width": 3643,
+      "sha256": "7bf6d9f3c85f27b5a091afad47f116043f5ef4adb7908fca6a24c6be12dceb12"
+    },
+    {
+      "boxes": [],
+      "file": "train__India_003861__2b565cf239.jpg",
+      "height": 720,
+      "split": "val",
+      "width": 720,
+      "sha256": "ca7c7e8c93392caf6b4b8075c7e86fe611286cf03f6636e840553f1377309e79"
+    },
+    {
+      "boxes": [
+        [
+          0,
+          0.30996,
+          0.44829,
+          0.20829,
+          0.09165
+        ],
+        [
+          0,
+          0.65997,
+          0.645,
+          0.65997,
+          0.34333
+        ]
+      ],
+      "file": "train__Japan_002993__8297fb4899.jpg",
+      "height": 600,
+      "split": "val",
+      "width": 600,
+      "sha256": "0f05add80e3bff25b9a793dd022b3dde50169c4b46b7391bc29dd0856fdf4711"
+    },
+    {
+      "boxes": [],
+      "file": "train__India_003907__7ec64e3bb8.jpg",
+      "height": 720,
+      "split": "val",
+      "width": 720,
+      "sha256": "7ba754aaa3ffc23cbe23e0cfd0b1d71fedd5df91742113a3821f11fe2cb44317"
+    },
+    {
+      "boxes": [
+        [
+          0,
+          0.85832,
+          0.78833,
+          0.27997,
+          0.32996
+        ]
+      ],
+      "file": "train__Japan_006787__f3f3158d41.jpg",
+      "height": 600,
+      "split": "val",
+      "width": 600,
+      "sha256": "ae3e8e536bd58bbdad0dcc36cb00f20eccf5256eebcc09a3244c7cdfa3c1b715"
+    },
+    {
+      "boxes": [
+        [
+          1,
+          0.56246,
+          0.5566,
+          0.11325,
+          0.66404
+        ],
+        [
+          4,
+          0.4277,
+          0.48826,
+          0.16796,
+          0.06441
+        ],
+        [
+          4,
+          0.19725,
+          0.58787,
+          0.39254,
+          0.06052
+        ],
+        [
+          1,
+          0.57615,
+          0.92383,
+          0.04294,
+          0.15038
+        ]
+      ],
+      "file": "train__China_MotorBike_001260__fd8a94f7d5.jpg",
+      "height": 512,
+      "split": "val",
+      "width": 512,
+      "sha256": "280b74351c9c3e5334397f31a824fc188b46dafdb178011b7534d2603e6de945"
+    },
+    {
+      "boxes": [],
+      "file": "train__India_004905__719be6edae.jpg",
+      "height": 720,
+      "split": "val",
+      "width": 720,
+      "sha256": "24a5ab5f5dd5e3553bc717c824fd7d8519db0426178957cbb2df1d79a004278a"
+    },
+    {
+      "boxes": [],
+      "file": "train__Norway_000174__9c35690f64.jpg",
+      "height": 2035,
+      "split": "val",
+      "width": 4040,
+      "sha256": "4b8afd0e6eb4827e3cc95ec2722e913ad199adc0cc4afe8032a3e9a489badb09"
+    },
+    {
+      "boxes": [
+        [
+          3,
+          0.79496,
+          0.59831,
+          0.10666,
+          0.04999
+        ]
+      ],
+      "file": "train__Japan_006331__36ab23f471.jpg",
+      "height": 600,
+      "split": "val",
+      "width": 600,
+      "sha256": "d046f735e97c840f22b5dcf77048fa4cfd7aa49bef61ee83cf977817b04bc2bd"
+    },
+    {
+      "boxes": [
+        [
+          1,
+          0.5333,
+          0.67164,
+          0.10497,
+          0.17496
+        ]
+      ],
+      "file": "train__Japan_004432__47440958c4.jpg",
+      "height": 600,
+      "split": "val",
+      "width": 600,
+      "sha256": "bd55b5656e623aed54a40ecb64c9ec1ebd0225a42a5fe49652d39770d3e0c303"
+    },
+    {
+      "boxes": [
+        [
+          1,
+          0.37826,
+          0.7903,
+          0.04555,
+          0.23859
+        ]
+      ],
+      "file": "train__Norway_002872__47c49b8fe7.jpg",
+      "height": 2041,
+      "split": "val",
+      "width": 3643,
+      "sha256": "20e5890b8b9f598a8c871ce427779baf0e922a3df4aac358b01ee8fff86da510"
+    }
+  ],
+  "preview_ids": [
+    "train__Japan_003139__12f07cc28a.jpg",
+    "train__Norway_003924__52050dff57.jpg"
+  ]
+}

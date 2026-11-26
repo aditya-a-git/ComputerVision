@@ -29,9 +29,21 @@ class Controller:
             target = 1
         else:
             target = 0
+        self.reason = "Temperature within current range or recovery margin"
+        if target != self.level and self.age < self.dwell:
+            self.reason = "Minimum dwell holds previous thermal level"
         if target != self.level and self.age >= self.dwell:
+            self.reason = (
+                "Heating threshold reached"
+                if target > self.level
+                else "Recovery threshold reached"
+            )
             self.level, self.age = target, 0
         valid = sum(h > 0 for h in health)
+        if valid < 2:
+            self.reason += " · " + (
+                "one stream connected" if valid else "both streams disconnected"
+            )
         if valid == 0:
             return "unavailable", "unavailable", 320
         if valid == 1 or self.level == 2:

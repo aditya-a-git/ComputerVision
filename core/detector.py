@@ -39,6 +39,7 @@ def predict(model, rgb, size=640, confidence=0.25, device="cpu", source="rgb"):
         cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR),
         imgsz=size,
         conf=confidence,
+        iou=0.7,
         device=device,
         verbose=False,
     )[0]

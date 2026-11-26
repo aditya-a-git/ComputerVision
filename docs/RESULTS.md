@@ -28,3 +28,18 @@ At the dashboard cutoff of 0.25, the 640-pixel RGB pipeline missed all 37 annota
 | Best single view, 320 | 32.1 | 290.0 | 15.21 |
 
 These are observations on the same 24 frames. Sampling variation, shared-host load, small classes and a weak detector limit conclusions. No general fusion improvement has been established. The one-batch smoke test is excluded. CARD frame retrieval required authentication; real CARD projection and cross-dataset accuracy remain unmeasured. Hardware telemetry, IR and vehicle tests were outside scope. [Paired results and per-frame provenance](measurements/tiny-rdd/report.json) · [Ultralytics class results](measurements/tiny-rdd/ultralytics.json)
+
+## Paired environment validation subset
+
+The shipped full-data checkpoint ran on the same 12 validation images at 320 px, with seed 42 and strength 0.65. The subset contained 5 negative images and 18 annotated objects. Values below are from the paired evaluator. These exploratory measurements describe this subset and host.
+
+| Condition | mAP50 | Recall | F1 | FP | FN | Pipeline p50 (ms) | Processed FPS |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| daylight | 0.376 | 0.167 | 0.250 | 3 | 15 | 26.6 | 21.2 |
+| darkness | 0.359 | 0.167 | 0.261 | 2 | 15 | 33.5 | 16.5 |
+| fog | 0.434 | 0.111 | 0.190 | 1 | 16 | 34.7 | 17.3 |
+| rain | 0.247 | 0.111 | 0.174 | 3 | 16 | 36.7 | 13.9 |
+| vibration | 0.306 | 0.056 | 0.100 | 1 | 17 | 43.1 | 7.6 |
+| noise | 0.200 | 0.000 | 0.000 | 2 | 18 | 48.0 | 5.8 |
+
+The recorded summary includes sample identifiers, per-class AP, baseline differences, software versions and checkpoint digest. Follow the README weather benchmark command to reproduce the selection and predictions. [Recorded environment summary](measurements/environment/summary_metrics.json)
