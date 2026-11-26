@@ -28,3 +28,46 @@ def test_modes(monkeypatch):
     monkeypatch.setattr(fusion, "proxy", lambda x: x[:1])
     with pytest.raises(ValueError):
         fusion.execute(None, image)
+
+
+def test_execution_provenance(monkeypatch):
+    image = np.full((32, 32, 3), 128, np.uint8)
+    extra = Detection(1, 0.35, (12, 12, 22, 22))
+    calls = []
+
+    def detect(model, image, size, confidence, source):
+        calls.append(source)
+        return ([A, extra] if source == "rgb" else [B]), 0.02
+
+    monkeypatch.setattr(fusion, "predict", detect)
+    for health, expected in [
+        ((1, 1), ["rgb", "proxy"]),
+        ((0, 1), ["proxy"]),
+        ((1, 0), ["rgb"]),
+        ((0, 0), []),
+        ((1, 1), ["rgb", "proxy"]),
+    ]:
+        calls.clear()
+        boxes, run = fusion.execute(None, image, health=health, explain=True)
+        assert calls == expected == run["branches"]
+        if len(calls) == 2:
+            match, unmatched = run["trace"]
+            assert (
+                match["iou"] == fusion.iou(A.box, B.box)
+                and match["rgb_index"] == match["proxy_index"] == 0
+            )
+            assert match["score"] == boxes[0].score and match["rgb_weight"] + match[
+                "proxy_weight"
+            ] == pytest.approx(1)
+            assert (
+                unmatched["decision"] == "below final confidence"
+                and unmatched["rgb_index"] == 1
+            )
+            assert unmatched["proxy_index"] is None and len(boxes) == 1
+        elif calls:
+            assert all(
+                r["kind"] == "single branch" and r["decision"] == "retained"
+                for r in run["trace"]
+            )
+        else:
+            assert not boxes and not run["trace"]

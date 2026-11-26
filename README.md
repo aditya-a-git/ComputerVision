@@ -68,9 +68,21 @@ The CLI resolves a pinned revision and requests one coherent file group. The pub
 ## Evidence and operation
 
 - [Demo script](docs/DEMO_SCRIPT.md) walks through the eight views.
-- [Results](docs/RESULTS.md) gives the tiny-sample measurements and failure cases.
+- [Results](docs/RESULTS.md) gives the full-data validation measurements and the earlier pilot failure cases.
 - [Experiment protocol](docs/EXPERIMENTS.md) defines metrics and runtime boundaries.
 - [Dataset provenance and licenses](docs/DATASET_PROVENANCE.md) documents sources and access conditions.
 - [Stage history, commands and file tree](docs/IMPLEMENTATION_STATUS.md) records verification and limitations.
 
 Run `python -m pytest -q` for the offline suite. CI installs dependencies, checks imports and lint, then runs tests without model or dataset downloads.
+
+## Run the paired environment benchmark
+
+With the environment activated and the repository checkpoint in place, run the following from the repository root. Use a fresh preparation directory for this selection.
+
+```bash
+python -m scripts.prepare_rdd --train 0 --val 12 --seed 42 --out data/processed/weather12
+python -m scripts.environment_benchmark --root data/processed/weather12 --weights models/rdd_best.pt --limit 12 --seed 42 --size 320 --strength 0.65 --conditions daylight darkness fog rain vibration noise --out runs/environment_benchmarks
+streamlit run app.py
+```
+
+Open **Experiments / Results** for the recorded CPU comparison or a new local run. Each finished local run includes the verified validation manifest, predictions, timings, exports and two sample previews. The published summary also works offline. **Fusion Lab** shows branch detections, quality estimates and the decision behind each fused candidate. **Virtual Edge Device** records explicit controller steps from a manual temperature or a bounded automatic ramp. [Experiment definitions and timing](docs/EXPERIMENTS.md)

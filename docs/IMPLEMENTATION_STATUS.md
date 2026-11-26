@@ -83,3 +83,17 @@ docs/
 ## Full-data training milestone
 
 Published epoch 2 of the eight-epoch full RDD run. Every epoch covers all 30,707 training images. Validation on the 7,676 held-out images measured mAP@0.50 0.16703 and mAP@0.50:0.95 0.06761. The downloadable checkpoint is models/rdd_best.pt. Its SHA-256 is ec812673a50a9fcba8a0951caa892b3505ce0bdfa36ba85c4c5ebd21fb143dce. Training is continuing in the original workspace.
+
+## Full RDD2022 training follow-up
+
+The complete export supplied 30,707 training and 7,676 validation images. All were retrieved or reused from verified local images, decoded at the recorded dimensions, resized proportionally to a maximum edge of 320 pixels and saved as JPEG at quality 90. All original class mappings, normalized coordinates, negative images and split assignments were retained. Ultralytics removed one duplicate annotation in each split. Image loss and cross-split byte duplication checks passed.
+
+YOLO11n was initialized from pretrained yolo11n.pt and trained for eight epochs at 320 pixels, batch size 16, seed 42, workers 0 on CPU. The loader used fraction 1.0 and retained its final incomplete batch. The best validation checkpoint was reloaded and evaluated on all 7,676 validation frames before installation as models/rdd_best.pt. The 100-image pilot is archived locally as models/rdd_best_100image.pt. See [full training measurements](measurements/full-rdd/validation.json).
+
+## Environment benchmarking, fusion traces and edge ramp
+
+The environment CLI evaluated six conditions twice on the same 12 original-resolution RDD validation images (seven annotated and five negatives). Both runs produced byte-identical prediction JSONL. The published summary contains genuine CPU measurements. Local run folders additionally contain the prediction stream, per-frame exports and preview images.
+
+The Fusion Lab records each post-detector candidate's source indices, matching decision and final score filter. The edge simulator records controller steps, stream health, executed detector branches, resolution and measured CPU time. Reset starts a new controller and pause retains the ramp position.
+
+Verification used Python 3.12 on CPU. The full suite passed 32 tests, Ruff E9/F and compileall passed, and the Streamlit health endpoint returned ok. AppTest exercised all eight pages in a workspace without a checkpoint, prepared images or CARD. Chromium exercised real image and four-frame MP4 uploads, stream disconnection and restoration, the bounded automatic ramp with pause/resume/reset, and recorded comparison charts and previews. GPU execution, gated CARD frames and physical edge performance were outside this verification.
